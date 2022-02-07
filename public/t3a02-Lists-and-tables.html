@@ -1,5 +1,20 @@
-<h5> Version 0.0.1.6</h5>
-
+<h5> Version 0.0.1.7</h5>
+function updateTime(){
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }
+    var t_str = hours + ":" + minutes + " ";
+    if(hours > 11){
+        t_str += "PM";
+    } else {
+        t_str += "AM";
+    }
+    document.getElementById('time_span').innerHTML = t_str;
+}
+setInterval(updateTime, 1000);
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
 <h1><center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html">Lists and tables </h1></a></center>
 <h2> Lists</h2>
@@ -32,3 +47,6 @@
         <li> Civic
         <li> Camry
         <li> Cr-v
+        </ul>
+
+        
