@@ -1,4 +1,4 @@
-<h5> Version 0.0.1.9</h5>
+<h5> Version 0.0.1.10</h5>
    
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
 <h1><center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html">Lists and tables </h1></a></center>
@@ -34,4 +34,26 @@
         <li> Cr-v
         </ul>
 
-        
+        <b>Assignment</b> Make a 3 x 4 table,
+ then make a link and image table with border = 0<br><br><br>
+
+<h2>Advanced</h2>
+
+Load an image and get it to move 10 pixals to the left using the buttom below<br>
+
+<image id="myImage01" src="https://pbs.twimg.com/profile_images/726045460331401216/izaV7jmy_400x400.jpg" style="position:relative; left:0; top:0; width:50;
+height:50; "><br>
+
+<input type=button value="Go Left" onclick="{
+   document.getElementById('myImage01').style.left= '200px'
+   document.getElementById('myDiv01').innerHTML = 'It went left'
+}">
+
+<input type=button value="Go Right" onclick="{
+   document.getElementById('myImage01').style.right= '200px'
+   document.getElementById('myDiv01').innerHTML = 'It went right'
+}">
+
+
+  <div id="myDiv01">...</div>
+
