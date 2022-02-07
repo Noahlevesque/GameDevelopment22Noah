@@ -1,27 +1,30 @@
-<h5> Version 0.0.1.7</h5>
-timer();
+<h5> Version 0.0.1.8</h5>
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
 
-function timer(){
- var currentTime = new Date()
-var hours = currentTime.getHours()
-var minutes = currentTime.getMinutes()
-var sec = currentTime.getSeconds()
-if (minutes < 10){
-    minutes = "0" + minutes
+  if(hh == 0){
+      hh = 12;
+  }
+  if(hh > 12){
+      hh = hh - 12;
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
 }
-if (sec < 10){
-    sec = "0" + sec
-}
-var t_str = hours + ":" + minutes + ":" + sec + " ";
-if(hours > 11){
-    t_str += "PM";
-} else {
-   t_str += "AM";
-}
- document.getElementById('time_span').innerHTML = t_str;
- setTimeout(timer,1000);
-}
-setInterval(updateTime, 1000);
+currentTime();
+                 
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
 <h1><center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html">Lists and tables </h1></a></center>
 <h2> Lists</h2>
