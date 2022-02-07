@@ -6,7 +6,7 @@ function currentTime() {
   let ss = date.getSeconds();
   let session = "AM";
 
-  if(hh == 0){
+  if(hh === 0){
       hh = 12;
   }
   if(hh > 12){
@@ -23,6 +23,7 @@ function currentTime() {
   document.getElementById("clock").innerText = time; 
   let t = setTimeout(function(){ currentTime() }, 1000);
 }
+
 currentTime();
                  
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
