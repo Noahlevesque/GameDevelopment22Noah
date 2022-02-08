@@ -115,18 +115,21 @@ Load an image and get it to move 10 pixels to the right using the buttom below<b
 
 <image id="myImage01" src="https://i.dailymail.co.uk/1s/2022/01/27/15/53444449-10448305-Beginning_next_week_McDonald_s_customers_who_can_t_choose_betwee-a-15_1643295905805.jpg" style="position:relative; left:0; top:0; width:50;
 height:50; "><br>
-
-   <input type=button value="Go Right" onclick="{
-   document.getElementById('myImage01').style.left= '200px'
-   document.getElementById('myDiv01').innerHTML = 'It went Right'
-}">
-   
-<input type=button value="Go left" onclick="{
+	
+	<input type=button value="Go left" onclick="{
    document.getElementById('myImage01').style.left= '0px'
    document.getElementById('myDiv01').innerHTML = 'It went right'
 }">
 
+   <input type=button value="Go Center" onclick="{
+   document.getElementById('myImage01').style.left= '750px'
+   document.getElementById('myDiv01').innerHTML = 'It went right'
+}">
 
+   <input type=button value="Go Right" onclick="{
+   document.getElementById('myImage01').style.left= '1500px'
+   document.getElementById('myDiv01').innerHTML = 'It went Right'
+}">
 
 
   <div id="myDiv01">...</div>
