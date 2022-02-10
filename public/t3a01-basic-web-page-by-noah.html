@@ -3,7 +3,7 @@
  <title> Basic Web Stuff</title>  
 </head>
 	
-<BODY bgcolor="#CFA9FF" text="#ffffff" link="#000000" vlink="#000000">
+<BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
 <h5>Version 0.0.1.77</h5>
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> t3a01 Basic Web Stuff </center> </h1></a>
 	<head>
@@ -60,57 +60,7 @@ showTime();
 	</script>
 </body>
 </html>
-<html lang="en">  
- <head>  
-   <meta charset="UTF-8">  
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-   <title>Weather App</title>  
-   <link rel="stylesheet" href="indxe.css">  
- </head>  
-	<h2> Current Weather</h2>
-	<body>  
-  <form id="form"><input type="text" id="search" placeholder="Search By Location" autocomplete="off">  
- </form>  
- <main id="main">  
- </main>  
-   <script>
-   const apiKey = "30701af7a5790fa4d80f2c487e337c6b";  
- const main = document.getElementById('main');  
- const form = document.getElementById('form');  
- const search = document.getElementById('search');  
- const url = (city)=> `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;  
- async function getWeatherByLocation(city){  
-      const resp = await fetch(url(city), {  
-        origin: "cros" });  
-      const respData = await resp.json();  
-       addWeatherToPage(respData);  
-    }  
-    function addWeatherToPage(data){  
-      const temp = Ktoc(data.main.temp);  
-      const weather = document.createElement('div')  
-      weather.classList.add('weather');  
-      weather.innerHTML = `  
-      <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>  
-      <small>${data.weather[0].main}</small>  
-      `;  
-     //  cleanup   
-      main.innerHTML= "";  
-       main.appendChild(weather);  
-    };  
-    function Ktoc(K){  
-      return Math.floor(K - 273.15);  
-    }  
-    form.addEventListener('submit',(e) =>{  
-     e.preventDefault();  
-     const city = search.value;  
-     if(city){  
-       getWeatherByLocation(city)  
-     }  
-    });  
-  </script>  
- </body>  
- </html>  
+
 
  <hr>
   
