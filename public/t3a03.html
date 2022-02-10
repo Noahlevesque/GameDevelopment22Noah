@@ -1,2 +1,159 @@
-<h6>Version 0.0.1.1</h6>
-<H1 ALIGN=CENTER> Forms </h1>
+<h3> Version 0.0.4 </h3>
+<h1 align=center>Forms Webpage</h1>
+
+<!DOCTYPE html>
+<html>
+<style>
+  h1 {
+  text-shadow: 2px 2px 8px #7B68EE;
+}
+  h2 {
+  text-shadow: 0 0 3px #FF0000;
+}
+  
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+</style>
+
+<body style="background-color:MediumSeaGreen;">
+  
+<p><font color=DarkSlateBlue>Forms</font><br>
+ 
+<font color=DarkSlateBlue>Enter Your First Name:<input type=text id="myText01" value="Noah"></font><br>
+  
+  <h2>CheckBox: </h2><br>
+<label class="container">Cats
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Parrots
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Rats
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Gerbils
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+
+</body>
+</html>
+
+ <h2>Radio of Colours</h2><br>
+  
+<form>
+<input type="radio" name="colour" value="blue" checked><font color="MediumBlue">blue<br>
+<input type="radio" name="colour" value="orange"><font color="OrangeRed"> orange<br>
+<input type="radio" name="colour" value="red"><font color="Crimson">red<br>  
+<input type="radio" name="colour" value="green"><font color="Lime"> green<br>
+<input type="radio" name="colour" value="yellow"><font color="Gold"> yellow<br>
+<input type="radio" name="colour" value="other"><font color="Navy"> other<br>
+</form> 
+
+</body>
+</html>
+  
+hidden:<input type=hidden><br>
+File:<input type=file><br>
+Reset:<input type=reset><br>
+Submit(Advanced):<input type=submit><br>
+
+  <!DOCTYPE html>
+<html>
+<body>
+  <font color="RedGreen">Click Here:</font><button type="button" onclick="alert('This button could've done anything and you clicked it without regard')">Click Me!</button><br>
+
+</body>
+</html>
+Textarea:<br>
+  <textarea id="myArea01" cols=60 rows=5 > HI </textarea><br>
+  
+  <h2><font color="DarkOrchid">Select Box</h2><br>
+<form action="https://www.google.com/">
+  <input list="Cars" name="Cars">
+  <datalist id="Cars">
+    <option value="Oldsmobile Tornado">
+    <option value="Oldsmobile Cutlass">
+    <option value="Ford Mustang">
+    <option value="Honda Civic">
+    <option value="Toyota Corolla">
+  </datalist>
+</form>
+
+</body>
+</html>
+  
+  <button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+  
+  <p id="demo"></p>
+  
