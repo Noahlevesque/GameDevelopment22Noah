@@ -1,80 +1,29 @@
-<h3> Version 0.0.4.6</h3>
-<h1 align=center>Forms Webpage</h1>
+<h6> Version 0.0.1.1</h6>
+<h1 align=center> Forms </h1>
+<cont color=red> Prove you can use:Forms</font>
 
-<body style="background-color:#F9146E;">
+<form >
+ Enter your First Name:<input type=test id="myText01" value="Noah"><br>
+ Checkbox:
+ Chicken:<input type=checkbox><br>
+ Vegetables:<input type=checkbox><br>
   
-<p><font color=#000000>Forms</font><br>
+  <hr>
+  Which superpower would you pick:<br>
+  Mind-Reading <input type=radio name="myRad01" value""><br>
+  Flying <input type=radio name="myRad01" value""><br>
+ Superspeed <input type=radio name="myRad01" value""><br>
+ <hr>
+  hidden;<input type=hidden><br>
+  file:<input type=file><br>
+  reset:<input type =reset><br>
+  Submit<input type=submit><br>
+  
+  button: <input type=button value="click" onclick="{
+    document.getElementById('myArea01').value='Cool'
+    }"><br>
+    Textarea:<br>
+    <textarea id="myArea01" cols=60 row=5 > wow <?textarea><br>
+
+  
  
-<font color=#000000>Enter Your First Name:<input type=text id="myText01" value=""></font><br>
-  
-  <h2>CheckBox: </h2><br>
-<label class="container">Cats
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Parrots
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Rats
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Gerbils
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-</body>
-</html>
-
- <h2>Radio of Colours</h2><br>
-  
-<form>
-<input type="radio" name="colour" value="blue" checked><font color="MediumBlue">blue<br>
-<input type="radio" name="colour" value="orange"><font color="OrangeRed"> orange<br>
-<input type="radio" name="colour" value="red"><font color="Crimson">red<br>  
-<input type="radio" name="colour" value="green"><font color="Lime"> green<br>
-<input type="radio" name="colour" value="yellow"><font color="Gold"> yellow<br>
-<input type="radio" name="colour" value="other"><font color="Navy"> other<br>
-</form> 
-
-</body>
-</html>
-  
-hidden:<input type=hidden><br>
-File:<input type=file><br>
-Reset:<input type=reset><br>
-Submit(Advanced):<input type=submit><br>
-
-  <!DOCTYPE html>
-<html>
-<body>
-  <font color="RedGreen">Click Here:</font><button type="button" onclick="alert('This button could've done anything and you clicked it without regard')">Click Me!</button><br>
-
-</body>
-</html>
-Textarea:<br>
-  <textarea id="myArea01" cols=60 rows=5 > HI </textarea><br>
-  
-  <h2><font color="DarkOrchid">Select Box</h2><br>
-<form action="https://www.google.com/">
-  <input list="Cars" name="Cars">
-  <datalist id="Cars">
-    <option value="Oldsmobile Tornado">
-    <option value="Oldsmobile Cutlass">
-    <option value="Ford Mustang">
-    <option value="Honda Civic">
-    <option value="Toyota Corolla">
-  </datalist>
-</form>
-
-</body>
-</html>
-  
-  <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-  
-  <p id="demo"></p>
-  
