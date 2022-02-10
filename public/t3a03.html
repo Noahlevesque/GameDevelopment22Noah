@@ -1,57 +1,11 @@
 <h3> Version 0.0.4.6</h3>
 <h1 align=center>Forms Webpage</h1>
 
-<!DOCTYPE html>
-<html>
-<style>
-  h1 {
-  text-shadow: 2px 2px 8px #7B68EE;
-}
-  h2 {
-  text-shadow: 0 0 3px #FF0000;
-}
-  
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-</style>
-
 <body style="background-color:#F9146E;">
   
 <p><font color=#000000>Forms</font><br>
  
-<font color=#000000>Enter Your First Name:<input type=text id="myText01" value="Noah"></font><br>
+<font color=#000000>Enter Your First Name:<input type=text id="myText01" value=""></font><br>
   
   <h2>CheckBox: </h2><br>
 <label class="container">Cats
