@@ -5,18 +5,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>
-   function random_bg_color() {
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-    var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
-  
-    document.body.style.background = bgColor;
-    }
-
-random_bg_color();</title>
+  <title><main id="main">
+  <div class="hsl-container">
+    <p id="hsl-display">
+      hsl(<span id="h-value">0</span>deg, <span id="s-value">50</span>%, <span id="l-value">50</span>%)
+    </p>
+    <div class="hsl-selector">
+      <div class="input-container">
+        <label for="h-range">Hue:</label>
+        0<input type="range" id="h-range" value="0" min="0" max="360" step="1">360
+      </div>
+      <div class="input-container">
+        <label for="s-range">Saturation:</label>
+        0<input type="range" id="s-range" value="50" min="0" max="100" step="1">100
+      </div>
+      <div class="input-container">
+        <label for="l-range">Lightness:</label>
+        0<input type="range" id="l-range" value="50" min="0" max="100" step="1">100
+      </div>
+    </div>
+  </div>
+</main></title>
 </head>
 <body>
 
