@@ -1,12 +1,25 @@
-<h6> rat</h6>
-function randombg(){
-var random= Math.floor(Math.random() * 6) + 0;
-var bigSize = ["url('https://images.theconversation.com/files/223729/original/file-20180619-126566-1jxjod2.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop')",
-               "url('https://wallpaperaccess.com/full/3087807.jpg')",
-               "url('https://i.natgeofe.com/n/73c00c4f-a746-4d0b-a006-ea5c5097d265/01-rat-friends-nationalgeographic_1162144.jpg')"];
-   document.getElementById("random").style.backgroundImage=bigSize[random];
-}
-<body onload="randombg()">
-	<div id="random" ></div>  
-</body>
-<button onclick="randombg()">reload simulation</button> 
+const background = document.getElementById("background");
+ 
+const getRandomNumber = (maxNum) => {
+  return Math.floor(Math.random() * maxNum);
+};
+ 
+const getRandomColor = () => {
+  const h = getRandomNumber(360);
+  const s = getRandomNumber(100);
+  const l = getRandomNumber(100);
+ 
+  return `hsl(${h}deg, ${s}%, ${l}%)`;
+};
+ 
+const setBackgroundColor = () => {
+  const randomColor = getRandomColor();
+  background.style.backgroundColor = randomColor;
+  background.style.color = randomColor;
+};
+ 
+setBackgroundColor();
+ 
+setInterval(() => {
+  setBackgroundColor();
+}, 1500);
