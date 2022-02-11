@@ -1,33 +1,20 @@
-<h1> version 0.0.7</h1>
+<h1> version 0.0.8</h1>
 
-<style>
- <body bg="background"> 
-<script>
-const background = document.getElementById("background");
- 
-const getRandomNumber = (maxNum) => {
-  return Math.floor(Math.random() * maxNum);
-};
- 
-const getRandomColor = () => {
-  const h = getRandomNumber(360);
-  const s = getRandomNumber(100);
-  const l = getRandomNumber(100);
- 
-  return `hsl(${h}deg, ${s}%, ${l}%)`;
-};
- 
-const setBackgroundColor = () => {
-  const randomColor = getRandomColor();
-  background.style.backgroundColor = randomColor;
-  background.style.color = randomColor;
-};
- 
-setBackgroundColor();
- 
-setInterval(() => {
-  setBackgroundColor();
-}, 1500);
-  }
-</script>
-</style>
+<!DOCTYPE HTML>  
+<html>  
+    <head>  
+        <script>  
+            function changeColor(color) { 
+                document.body.style.background = color; 
+            }
+        </script>  
+    </head>  
+    <body style = "text-align:center;"> 
+        <h1>StackHowTo.com</h1>   
+        <p><b>Click on the button to change the background color.</b></p> 
+        <button onclick = "changeColor('blue');">Blue</button>
+        <button onclick = "changeColor('green');">Green</button> 
+        <button onclick = "changeColor('red');">Red</button>
+        <button onclick = "changeColor('yellow');">Yellow</button> 
+    </body>  
+</html>
