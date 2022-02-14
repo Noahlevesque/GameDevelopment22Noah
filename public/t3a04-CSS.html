@@ -1,4 +1,4 @@
-Version 0.0.1.6</br>
+Version 0.0.1.7</br>
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a04 CSS</center> </h1></a>
 <BODY bgcolor="#F9146E" text="#000000" link="#000000" vlink="#000000">
 Reference Link
@@ -25,9 +25,18 @@ I do CSS inside the tag. It overpowers all other methods<br>
 <textarea id="move" style="position:relative; left:0; top:0; width;200; height:50; ">
   advanced see if you move this textarea
 </textarea><br>
+	<input type=button value="Go left" onclick="{
+   document.getElementById('move').style.left= '0px'
+   document.getElementById('myDiv01').innerHTML = 'It went right'
+}">
+
    <input type=button value="Go Center" onclick="{
    document.getElementById('move').style.left= '750px'
    document.getElementById('myDiv01').innerHTML = 'It went right'
 }">
 
+   <input type=button value="Go Right" onclick="{
+   document.getElementById('move').style.left= '1500px'
+   document.getElementById('myDiv01').innerHTML = 'It went Right'
+}">
   <div id="myDiv01">...</div>
