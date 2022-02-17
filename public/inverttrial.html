@@ -28,7 +28,65 @@ img {
   max-width: 100%;
   border-radius: 4px;
 }
-  </ody>
+     function wrap(el) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("card");
+
+  let max;
+
+  if (el.dataset.type === "%") {
+    max = 100;
+  } else if (el.dataset.type === "angle") {
+    max = 360;
+  } else if (el.dataset.type === "px") {
+    max = 20;
+  } else {
+    max = 4;
+  }
+  wrapper.insertAdjacentHTML(
+    "beforeEnd",
+    `<input type='range' min="0" max="${max}" value="100">`
+  );
+
+  el.parentNode.insertBefore(wrapper, el);
+  wrapper.appendChild(el);
+  wrapper.insertAdjacentHTML(
+    "beforeEnd",
+    `<pre class='output'>{
+  ${el.getAttribute("style")}
+}</pre>`
+  );
+
+  return wrapper;
+}
+
+const imgs = document.querySelectorAll("img");
+
+imgs.forEach((img) => {
+  const wrapper = wrap(img);
+
+  let range = wrapper.querySelector("input");
+  range.addEventListener("input", (e) => {
+    let newValue;
+
+    if (img.dataset.type === "%") {
+      newValue = e.target.value + "%";
+    } else if (img.dataset.type === "angle") {
+      newValue = e.target.value + "deg";
+    } else if (img.dataset.type === "px") {
+      newValue = e.target.value + "px";
+    } else {
+      newValue = e.target.value;
+    }
+
+    img.style.setProperty("--value", newValue);
+    const output = wrapper.querySelector(".output");
+    output.innerHTML = `{
+  ${img.getAttribute("style")}
+}`;
+  });
+});
+  </body>
   </head>
     </style>    
 <img style="filter: invert(var(--value, 100%))" data-type="%" src="https://media.istockphoto.com/photos/closeup-of-a-hairlesss-rat-cleaning-itself-picture-id512965154?k=20&m=512965154&s=612x612&w=0&h=35TkEIM41_TMoLZqg_iajekLRm_npKEJgUrrZe0cP2E=" alt="ukulele">
