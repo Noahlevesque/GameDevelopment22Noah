@@ -1,0 +1,29 @@
+Version 0.0.0.1
+<BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
+ <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a06 Variables </center> </h1></a>
+	<hr>
+  <a href="https://www.w3schools.com/js/js_variables.asp">Reference Links</a><br><br>
+  Other languages use: bool, int, float, char, string,int_8, int_16, etc<br>
+  
+ Javascript uses "var" and "let" for local variables.<br>
+  
+  <h4> Example Variables code<h4>
+   <pre>
+   let myIn01 = document.getElementById('myText01').value
+   document.getElementById('myDiv01').innerHTML = myIn01
+   </pre>
+    
+    <h4>Example Working Code</h4>
+    
+    <input id="myText01" type=text value="The Dog" >
+    <input id="myText02" type=text value="The Cat" > <br>
+    <input type=button value="Show Variable" onclick= "{
+    let myIn01 = document.getElementById('myText01').value
+    document.getElementById('myDiv01').innerHTML = myIn01
+    }"> <br>
+    
+    <input type=button value="Using no variable" onclick="{
+       document.getElementById('myDiv01').innerHTML = document.getElementById9'myText02').value
+    }"><br>
+    
+    <div id="myDiv01"> </div>
