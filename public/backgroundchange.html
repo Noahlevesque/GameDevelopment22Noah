@@ -1,4 +1,4 @@
-version 2
+version 23
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,27 +14,29 @@ version 2
     </script>
   </head>
   <body>
-   	<h2 contentEditable role='textbox' aria-multiline='true' >inverted</h2>
-</header>
+
     <button onclick="changeBackgroundImage();">Change</button>
  { margin: 0; padding: 0 }
+  </body>
+</html>
+
+<header>
+  <h2 contentEditable role='textbox' aria-multiline='true' >And stay alive</h2>
+</header>
+* {
+  margin: 0;
+  padding: 0;
+}
 
 header {
-	overflow: hidden;
-	height: 100vh;
-	background: url(https://cdn.wallpapersafari.com/2/6/zV6YZN.jpg) 50%/ cover
+  overflow: hidden;
+  height: 100vh;
+  background: url(https://cdn.wallpapersafari.com/2/6/zV6YZN.jpg) 50%/cover;
 }
 
 h2 {
-	height: inherit;
-	background: inherit;
-	-webkit-background-clip: text;
-					background-clip: text;
-	color: transparent;
-	font: 900 35vmin/50vh cookie, cursive;
-	text-align: center;
-	filter: invert(1) grayscale(1) contrast(9);
+  color: white;
+  font: 900 35vmin/50vh cookie, cursive;
+  text-align: center;
+  mix-blend-mode: difference;
 }
-  </body>
-</html>
-<header>
