@@ -12,7 +12,27 @@
     </script>
   </head>
   <body>
-    <h1>Click the button to change the background image:</h1>
+   	<h2 contentEditable role='textbox' aria-multiline='true' >inverted</h2>
+</header>
     <button onclick="changeBackgroundImage();">Change</button>
+  * { margin: 0; padding: 0 }
+
+header {
+	overflow: hidden;
+	height: 100vh;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/17_04_cat_bg_03.jpg) 50%/ cover
+}
+
+h2 {
+	height: inherit;
+	background: inherit;
+	-webkit-background-clip: text;
+					background-clip: text;
+	color: transparent;
+	font: 900 35vmin/50vh cookie, cursive;
+	text-align: center;
+	filter: invert(1) grayscale(1) contrast(9);
+}
   </body>
 </html>
+<header>
