@@ -1,4 +1,4 @@
-Version 0.0.1.16
+Version 0.0.1.17
 <BODY bgcolor="#000000" text="#ffffff" link="#ffffff" vlink="#ffffff">
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a05 Input and Output </center> </h1></a>
 	<hr>
@@ -22,7 +22,7 @@ Version 0.0.1.16
 }"><br>
 	<div id="myDiv01">...</div>
 
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -31,13 +31,27 @@ Version 0.0.1.16
       function changeBackgroundImage() {
         document.body.style.backgroundImage = "url('https://cdn.wallpapersafari.com/2/6/zV6YZN.jpg')";
         document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundSize = "contain";
+        document.body.style.backgroundSize = "auto";
       }
     </script>
   </head>
   <body>
 
-    <button onclick="changeBackgroundImage();">Change Background</button>
+    <button onclick="changeBackgroundImage();">Change</button>
   </body>
 </html>
 
+<header>
+  <h2 contentEditable role='textbox' aria-multiline='true' >Rat</h2>
+</header>
+
+  <head>
+  <meta charset="utf-8" />
+    <script>
+      // The function below will change the background image
+      function changeBackgroundImage2() {
+        document.body.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/1536px-Black_colour.jpg')";
+        document.body.style.backgroundSize = "background-size: cover;";
+      }
+    </script>
+ <button onclick="changeBackgroundImage2();">Reset Backgroundt</button>
