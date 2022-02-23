@@ -51,7 +51,7 @@ Version 0.0.1.21
         document.body.style.backgroundSize = "background-size: cover;";
       }
     </script>
- <button onclick="changeBackgroundImage();">Change Background</button><button onclick="changeBackgroundImage2();">Reset Background</button>
+ <button onclick="changeBackgroundImage();">Change Background</button><button onclick="changeBackgroundImage2();">Reset Background</button><br>
 <html>
 <body>
 <button onclick="dbltxt()">Press to Crash Page</button>
@@ -66,3 +66,34 @@ function dbltxt() {
 
 </body>
 </html>
+<html>
+
+<head>
+    <title>Change Color in JS</title>
+</head>
+
+<body>
+    <button id="toBlue">Blue</button>
+    <button id="toGreen">Green</button>
+    <button id="toRed">Red</button>
+    <div>
+        <p id="output_text">Click the buttons immediately above to change the colour of this sentence</p>
+    </div>
+    <script>
+
+        document.getElementById("toBlue").onclick = function () {
+            document.getElementById("output_text").style.color = '#4A412A';
+        }
+
+        document.getElementById("toGreen").onclick = function () {
+            document.getElementById("output_text").style.color = '#75j39g';
+        }
+
+        document.getElementById("toRed").onclick = function () {
+            document.getElementById("output_text").style.color = '#FF0000';
+        }
+
+    </script>
+</body>
+
+</html
