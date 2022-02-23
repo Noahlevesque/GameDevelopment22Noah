@@ -52,3 +52,17 @@ Version 0.0.1.20
       }
     </script>
  <button onclick="changeBackgroundImage();">Change Background</button><button onclick="changeBackgroundImage2();">Reset Background</button>
+<html>
+<body>
+<button onclick="dbltxt()">Try it</button>
+<p id="demo">Click the button double this text, refresh the page to undo</p>
+
+<script>
+function dbltxt() {
+  const element = document.getElementById("demo");
+  element.innerHTML += element.innerHTML;
+}
+</script>
+
+</body>
+</html>
