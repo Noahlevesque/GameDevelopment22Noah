@@ -1,23 +1,36 @@
+
+//text box
+function sayHi() {
+  var txtName = document.getElementById("txtName");
+  var divOutput = document.getElementById("divOutput");
+  var name = txtName.value;
+  divOutput.innerHTML = "<em>" + name + "</em>";
+  divOutput.innerHTML = "is a very nice name.";
+}
+//end HI
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
-
-<script> 
-
-var customerName = prompt("Please enter your name", "");
-if (customerName!= null) {
-    document.getElementById("welcome").innerHTML =
-    "Hello " + customerName + "! How are you today?";
-}
-
-</script>
-
+  <meta charset="UTF-8">
+  <title>Inner.html</title>
+  <link rel="stylesheet" type="text/css" href="textBoxes.css" />
 </head>
 
 <body>
-
-<div id="welcome">My First JavaScript code.</div>
-
+  <h1>Inner HTML </h1>
+  <form action="">
+    <fieldset>
+      <label>Pleae type your name</label>
+      <input type="text" id="txtName" />
+      <button type="button" onclick="sayHi()">
+         Click Me
+        </button>
+    </fieldset>
+  </form>
+  <div id="divOutput">
+    Watch this space.
+  </div>
 </body>
+
 </html>
