@@ -1,13 +1,5 @@
+6
 
-//text box
-function sayHi() {
-  var txtName = document.getElementById("txtName");
-  var divOutput = document.getElementById("divOutput");
-  var name = txtName.value;
-  divOutput.innerHTML += "<em>" + name + "</em>";
-  divOutput.innerHTML += " is a very nice name.";
-}
-//end HI
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -28,6 +20,16 @@ function sayHi() {
                     </button>
   </fieldset>
 </form>
+  
+  <script>
+    function sayHi() {
+  var txtName = document.getElementById("txtName");
+  var divOutput = document.getElementById("divOutput");
+  var name = txtName.value;
+  divOutput.innerHTML += "<em>" + name + "</em>";
+  divOutput.innerHTML += " is a very nice name.";
+}
+  </script>
 <div id="divOutput">
   Watch this space.
 </div>
