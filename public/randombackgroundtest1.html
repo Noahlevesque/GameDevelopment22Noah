@@ -1,39 +1,34 @@
-<h1>7</h1>
-
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Inner.html</title>
-  <link rel="stylesheet" type="text/css" href="textBoxes.css" />
-</head>
-
-<body>
-  <h1>Inner HTML </h1>
- <form action="">
-  <fieldset>
-    <label>Pleae type your name</label>
-    <input type="text" id="txtName" />
-    <button type="button" onclick="sayHi()">
-                     Click Me
-                    </button>
-  </fieldset>
-</form>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inner.html</title>
+    <link rel="stylesheet" type="text/css" href="textBoxes.css" />
+  </head>
+  <body>
+    <h1>Inner HTML</h1>
+    <form>
+      <fieldset>
+        <label>Please type your name</label>
+        <input type="text" id="txtName" />
+        <button type="button" onclick="sayHi()">
+          Click Me
+        </button>
+      </fieldset>
+    </form>
+    <div id="divOutput">
+      Watch this space.
+    </div>
+    <script type="text/javascript">
+      //text box
+      function sayHi() {
+        var txtName = document.getElementById("txtName");
+        console.log(txtName.value); // <== use dot value to get the value.
+        var divOutput = document.getElementById("divOutput");
+        divOutput.innerHTML =
+          "<em>" + txtName.value + "</em> is a very nice name.";
+      }
+      //end HI
     </script>
-  <div id="divOutput"> </div>
-  Watch this space.
-</div>
-</body>
- 
+  </body>
 </html>
-  <script>
-    function sayHi() {
-  var txtName = document.getElementById("txtName");
-  var divOutput = document.getElementById("divOutput");
-  var name = txtName.value;
-  divOutput.innerHTML += "<em>" + name + "</em>";
-  divOutput.innerHTML += " is a very nice name.";
-}
-  </script>
-
