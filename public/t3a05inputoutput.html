@@ -1,4 +1,4 @@
-Version 0.0.1.26
+Version 0.0.1.27
 <BODY bgcolor="#000000" text="#ffffff" link="#ffffff" vlink="#ffffff">
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a05 Input and Output </center> </h1></a>
 	<br><br>
@@ -96,3 +96,35 @@ function dbltxt() {
 </body>
 
 </html
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="textBoxes.css" />
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <label>Please type your name</label>
+        <input type="text" id="txtName" />
+        <button type="button" onclick="sayHi()">
+          Click Me
+        </button>
+      </fieldset>
+    </form>
+    <div id="divOutput">
+      Watch this space.
+    </div>
+    <script type="text/javascript">
+      //text box
+      function sayHi() {
+        var txtName = document.getElementById("txtName");
+        console.log(txtName.value); // <== use dot value to get the value.
+        var divOutput = document.getElementById("divOutput");
+        divOutput.innerHTML =
+          "<em>" + txtName.value + "</em> is your name.";
+      }
+    
+    </script>
+  </body>
+</html>
