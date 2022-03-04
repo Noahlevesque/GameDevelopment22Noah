@@ -1,4 +1,4 @@
-version 0.0.1.5
+version 0.0.1.6
 <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a07 Decisions </center> </h1></a>
 	<head>
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
@@ -34,24 +34,23 @@ document.getElementById("demo").innerHTML = greeting;
 </html>
 Working version of example code shown above<br>
 <input id="myNum01" type=number value="4" ><br>
+	
 <input type=button value="Simple if Statement for Decision Making" onclick="{ 
-    let my In01 = parseFloat(document.getElementById('myNum01').value)
+    let myIn01 = parseFloat(document.getElementById('myNum01').value)
         if (my In01 >= 3){
-  document.getElementById('myDiv01').innerHTML = myIn01 + 'is greater than 3'
+  document.getElementById('myDiv01').innerHTML = myIn01 + ' is greater than 3'
 }
 }">
 
 <input type=button value="if...else" onclick="{
-
-let my In01 = parseFloat(document.getElementById('myNum01').value)
+let myIn01 = parseFloat(document.getElementById('myNum01').value)
 if (myIn01 >= 3){
-document.getElementById('myDiv01').innerHTML = my In01 +' is greater than 3'
+document.getElementById('myDiv01').innerHTML = myIn01 +' is greater than 3'
 } else {
-document.getElementById('myDiv01').innerHTML = my In01 +' is less than 3'}
+document.getElementById('myDiv01').innerHTML = myIn01 +' is less than 3'}
 }">
 
 <input type=button value="Complex if" onclick="{
-
 let myIn01 = parseFloat(document.getElementById('myNum01').value) 
 if ((my In01 != 3 || myIn01 > -3) && my Ine1 <=100 ) {
 document.getElementById('myDiv01').innerHTML =my In01 +' is complex'
