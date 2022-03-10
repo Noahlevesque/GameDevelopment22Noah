@@ -6,7 +6,7 @@
     return myReply
   }
 </script>
-Version 0.0.0.5
+Version 0.0.0.6
 <BODY bgcolor="#CFA9FF" text="#000000" link="#000000" vlink="#000000">
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a09 Functions</center> </h1></a>
  <a href="https://www.w3schools.com/js/js_functions.asp">
@@ -29,3 +29,23 @@ function myGrabNumber(){
 }">
 
 <div id="myDiv01"></div>
+<!DOCTYPE html>
+<html>
+<body>
+<p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
+
+<p>
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>Celcius: <span id="outputCelcius"></span></p>
+
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+}
+</script>
+
+</body>
+</html>
