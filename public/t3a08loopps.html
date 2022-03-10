@@ -1,4 +1,4 @@
-Version 0.0.0.5
+Version 0.0.0.6
 <BODY bgcolor="#F914E0" text="#000000" link="#06eb1f" vlink="#000000">
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a08 Loops </center> </h1></a>
 <h4> Example working Code </h4>
@@ -22,3 +22,24 @@ document.getElementById('myDiv01').innerHTML = myTemp
 }">
 
 <div id="myDiv01"></div>
+
+ 
+ <br><br><br>
+ Max loops: <input id="myNum02" type=number value="4"><br>
+
+<input type=button value="Loop #2" onclick="{
+     document.getElementById('myDiv02').innerHTML=''
+     let myTemp= ''
+                                                                  
+     let myMax= parseInt (document.getElementById('myNum02').value)
+                                                                  
+     for (let myLoop = 1; myLoop < myMax; myLoop++ ){
+        if (myLoop * 7 > myMax){
+     myTemp += ' weird and wacky '
+   }
+  myTemp += 'Loop number: ' + myLoop + '<br>'
+ }
+document.getElementById('myDiv02').innerHTML = myTemp
+}">
+
+<div id="myDiv02"></div>
