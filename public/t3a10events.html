@@ -1,4 +1,4 @@
-Version 0.0.0.10
+Version 0.0.0.11
 <BODY text="#000000" link="#000000" vlink="#000000">
 <html>
   <meta charset="utf-8">
@@ -97,6 +97,34 @@ onkeydown="color('blue')"
 onkeyup="color('yellow')"
 name="myInput">
 </form>
+
+</body>
+</html>
+
+  <b>onmousemove</b><br>
+  <html>
+  
+<head>
+<script>
+function myFunction(e) {
+  x = e.clientX;
+  y = e.clientY;
+  coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("demo").innerHTML = coor
+}
+
+function clearCoor() {
+  document.getElementById("demo").innerHTML = "";
+}
+</script>
+</head>
+<body style="margin:0px;">
+
+<div id="coordiv" style="width:199px;height:99px;border:1px solid" onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
+
+<p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+
+<p id="demo"></p>
 
 </body>
 </html>
