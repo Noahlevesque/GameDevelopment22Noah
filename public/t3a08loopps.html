@@ -1,4 +1,4 @@
-Version 0.0.0.10
+Version 0.0.0.11
 <BODY text="#000000" link="#06eb1f" vlink="#000000">
  <html>
   <meta charset="utf-8">
@@ -19,6 +19,23 @@ random_bg_color();
   </script>
 </body>
 </html>
+ <style>
+ const css = `html {
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  -o-filter: invert(100%);
+  -ms-filter: invert(100%);
+}`
+const head = document.head
+const style = document.createElement('style')
+style.type = 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+head.appendChild(style);
+ </style> 
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a08 Loops </center> </h1></a>
 <hr>
  <h4> Example working Code </h4>
