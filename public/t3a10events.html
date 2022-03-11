@@ -40,7 +40,7 @@ Events are HTML code that activates Javascript Code<br>
  
 <div id="myDiv01"></div>
 
-
+  <b> onMouseOver</b>
 <b id="myB01" onMouseOut="{
                         document.getElementById('myB01').innerHTML = 'This is bold'
 }"  onMouseOver="{
@@ -50,7 +50,7 @@ Events are HTML code that activates Javascript Code<br>
   <html>
   
 <body>
-  <b> onChange</b>
+  <b> onChange</b><br>
 Enter your name: <input type="text" id="fname" onchange="upperCase()"><br><br>
 <script>
 function upperCase() {
@@ -72,7 +72,7 @@ function myFunction(x) {
 </script>
 </head>
 <body>
-
+<b> onFocus<b><br>
 Enter your name: <input type="text" onfocus="myFunction(this)"><br><br>
 
 </body>
@@ -88,13 +88,13 @@ function color(color) {
 </script>
 </head>
 <body>
-
+  <b> onkeydown/onkeyup</b><br>
 <form>
 Write a message:<br>
 <input 
 type="text" 
-onkeydown="color('yellow')"
-onkeyup="color('blue')"
+onkeydown="color('blue')"
+onkeyup="color('yellow')"
 name="myInput">
 </form>
 
