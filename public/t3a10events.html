@@ -46,10 +46,12 @@ Events are HTML code that activates Javascript Code<br>
 }"  onMouseOver="{
                  document.getElementById('myB01').innerHTML = 'This is cool'
                  }"   >This is bold</b>
-<html>
+<br><br>
+  <html>
+  
 <body>
-
-Enter your name: <input type="text" id="fname" onchange="upperCase()">
+  <b> onChange</b>
+Enter your name: <input type="text" id="fname" onchange="upperCase()"><br><br>
 <script>
 function upperCase() {
   const x = document.getElementById("fname");
@@ -71,9 +73,7 @@ function myFunction(x) {
 </head>
 <body>
 
-Enter your name: <input type="text" onfocus="myFunction(this)">
-
-<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+Enter your name: <input type="text" onfocus="myFunction(this)"><br><br>
 
 </body>
 </html>
