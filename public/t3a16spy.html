@@ -1,4 +1,4 @@
-version 0.0.0.4
+version 0.0.0.5
 <BODY text="#000000" link="#000000" vlink="#000000">
 
 <html>
@@ -56,7 +56,16 @@ random_bg_color();
       if (myString[myLoop] == 'x') {myTemp  = 'y'}                                       
       if (myString[myLoop] == 'y') {myTemp  = 'z'}                                       
       if (myString[myLoop] == 'z') {myTemp  = 'a'}                                       
-      myString[myLoop] = myTemp
+      if (myString[myLoop] == '1') {myTemp  = '8'} 
+      if (myString[myLoop] == '2') {myTemp  = '7'}                                       
+      if (myString[myLoop] == '3') {myTemp  = '1'}                                       
+      if (myString[myLoop] == '4') {myTemp  = '9'}                                       
+      if (myString[myLoop] == '5') {myTemp  = '3'}                                       
+      if (myString[myLoop] == '6') {myTemp  = '4'}                                       
+      if (myString[myLoop] == '7') {myTemp  = '5'}                                       
+      if (myString[myLoop] == '8') {myTemp  = '2'}                                       
+      if (myString[myLoop] == '9') {myTemp  = '6'}                                       
+                                            myString[myLoop] = myTemp
    }
    document.getElementById('myArea02').value = myString.join('')
 }"><br><br>
