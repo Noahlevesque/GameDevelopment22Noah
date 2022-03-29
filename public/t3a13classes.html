@@ -26,7 +26,7 @@ random_bg_color();
 
  
  
- <h5>Version 0.0.0.7</h5>
+ <h5>Version 0.0.0.8</h5>
  
  
  
@@ -56,14 +56,14 @@ random_bg_color();
  <input type=button value="Example Class Set and Show Class Animal" onClick="{
    class myAnimal{
          constructor(passName, passAge) {
-    this.myName = passName;
+    this.myName = 'myText01';
     this.myAge = passAge;
  }
  myShow(){
     document.getElementById('myDiv01').innerHTML = 'Hello '+ this.myName + '.You are ' + this.myAge +' years old<br>'
     }
  }
-    myDog = new myAnimal(id= 'myText01' , 5)
+    myDog = new myAnimal('Snickers' , 5)
     myDog.myShow()
     
     }">
