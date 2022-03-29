@@ -52,11 +52,11 @@ random_bg_color();
     </pre>
  <hr>
  <h4> Example working Classes code </h4>
- Nothing: <input type=text id="passName" value="useless atm"><br>
+ Nothing: <input type=text id="myText01" value="useless atm"><br>
  <input type=button value="Example Class Set and Show Class Animal" onClick="{
    class myAnimal{
          constructor(passName, passAge) {
-    this.myName = 'passName';
+    this.myName = passName;
     this.myAge = passAge;
  }
  myShow(){
