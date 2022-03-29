@@ -26,7 +26,7 @@ random_bg_color();
 
  
  
- <h5>Version 0.0.0.9</h5>
+ <h5>Version 0.0.0.10</h5>
  
  
  
@@ -52,7 +52,7 @@ random_bg_color();
     </pre>
  <hr>
  <h4> Example working Classes code </h4>
- Nothing: <input type=text id="myText01" value="useless atm"><br>
+ Nothing: <input type=text id="myText01" value="This does nothing"><br>
  <input type=button value="Example Class Set and Show Class Animal" onClick="{
    class myAnimal{
          constructor(passName, passAge) {
@@ -68,3 +68,29 @@ random_bg_color();
     
     }">
  <div id="myDiv01"></div>
+
+
+
+Name <input type=text id="myText02" value="Your Name Here"><br>
+
+Age <input type=text id="myText03" value="your Age here/"><br>
+<input type=button value="ExampleClass" onClick="{
+let x = document.getElementById('myText02').value
+let y = document.getElementById('myText03').value
+class myAnimal{
+constructor(passName,passAge){
+this.myName = passName;
+this.myAge = passAge
+
+}
+
+myShow(){
+document.getElementById('myDiv02').innerHTML = 'Hello ' + this.myName + ' You Are ' + this.myAge + ' Years old<br> '
+}
+}
+myDog = new myAnimal( x, y)
+myDog.myShow()
+
+}">
+
+<div id="myDiv02">...</div>
