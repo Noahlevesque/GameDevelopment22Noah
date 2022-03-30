@@ -1,4 +1,4 @@
-Version 0.0.0.8
+Version 0.0.0.9
 <html>
   <meta charset="utf-8">
 <body>
@@ -60,8 +60,8 @@ random_bg_color();
 <h4> Example extending Class code</h4>
 Pet Color
 <br><input type=text id="myText03" value="Brown">
-Pet Name
-<br><input type=text id="myText04" value="name">
+Pet Name<br>
+<input type=text id="myText04" value="name">
 <input type=button value="Example Extend Class Animal" onClick="{
 let x = document.getElementById('myText03').value
 let y = document.getElementById('myText04').value
@@ -71,7 +71,7 @@ let y = document.getElementById('myText04').value
     }                                                                   
 }  
                                                                                                                                                                                                                                                                                                                                     
-   myPet = new myCat('y', 14, x)
+   myPet = new myCat(y, 14, x)
    myPet.myShow()  
 
 }">
