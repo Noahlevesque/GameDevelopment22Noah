@@ -1,4 +1,4 @@
-version 0.0.0.17
+version 0.0.0.18
 <html>
 
 <BODY  text="#FFFFFF" link="#FFFFFF" vlink="#000000">
@@ -19,7 +19,7 @@ version 0.0.0.17
    let myClock
 </script>
 
-<input id="myButton01" type=button value="background move left" onclick="{
+<input id="myButton01" type=button value="Move Background left" onclick="{
   myTemp = '100px 0px'
   myGlobalX -= 5
   myTemp =  myGlobalX + 'px 0px'
@@ -27,7 +27,22 @@ version 0.0.0.17
 
 }">
 
+<input id="myButton01" type=button value="Move Background Right" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= -5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+
+}">
+
 <input type=button value="Auto Background Left" onclick="{
+  clearInterval(myClock)
+  myClock = setInterval(function(){
+     document.getElementById('myButton01').click() 
+  }, 100)
+    
+}">
+<input type=button value="Auto Background Rigth" onclick="{
   clearInterval(myClock)
   myClock = setInterval(function(){
      document.getElementById('myButton01').click() 
