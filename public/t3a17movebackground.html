@@ -1,4 +1,4 @@
-version 0.0.0.18
+version 0.0.0.19
 <html>
 
 <BODY  text="#FFFFFF" link="#FFFFFF" vlink="#000000">
@@ -27,7 +27,7 @@ version 0.0.0.18
 
 }">
 
-<input id="myButton01" type=button value="Move Background Right" onclick="{
+<input id="myButton02" type=button value="Move Background Right" onclick="{
   myTemp = '100px 0px'
   myGlobalX -= -5
   myTemp =  myGlobalX + 'px 0px'
@@ -45,7 +45,7 @@ version 0.0.0.18
 <input type=button value="Auto Background Rigth" onclick="{
   clearInterval(myClock)
   myClock = setInterval(function(){
-     document.getElementById('myButton01').click() 
+     document.getElementById('myButton02').click() 
   }, 100)
     
 }">
