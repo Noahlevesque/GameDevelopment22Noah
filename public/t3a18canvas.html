@@ -1,5 +1,5 @@
 
-version 0.0.0.4
+version 0.0.0.5
 <html>
   <meta charset="utf-8">
 <body>
@@ -20,11 +20,19 @@ random_bg_color();
 </body>
 </html>
 <script> 
-  function getRandomIntInclusive(1, 399) {
-  min = Math.ceil(1);
-  max = Math.floor(399);
-  return Math.floor(Math.random() * (399 - 1 + 1) + 1); //The maximum is inclusive and the minimum is inclusive
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
+
+console.log(getRandomInt(399));
+// expected output: 0, 1 or 2
+
+console.log(getRandomInt(1));
+// expected output: 0
+
+console.log(Math.random());
+// expected output: a number from 0 to <1
+
  </script> 
 <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a18 Canvas </center> </h1></a>
 
@@ -34,8 +42,8 @@ You use loops and variables to make fast fancy drawings <br><br>
 <input type=button value=".lineTo(30,200)" onclick="{
    myContext.beginPath();
    myContext.lineWidth = 1;   
-   myContext.moveTo.getRandomIntInclusive();
-   myContext.lineTo.getRandomIntInclusive();
+   myContext.moveTo.getRandomInt(max).Math.floor(Math.random() * max);
+   myContext.lineTo.getRandomInt(max).Math.floor(Math.random() * max);
    myContext.stroke();
 }">
 
