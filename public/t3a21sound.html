@@ -1,0 +1,30 @@
+<script> let mySound1 = new Audio('Bruh - Sound Effect (HD).mp3') </script>
+ 
+
+Version 0.0.0.2
+<BODY text="#000000" link="#000000" vlink="#000000">
+<html>
+  <meta charset="utf-8">
+<body>
+<script>
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor);
+  
+    document.body.style.background = bgColor;
+    }
+
+random_bg_color();
+
+  </script>
+</body>
+</html>
+ <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a21 Sound</center> </h1></a>
+<hr>
+
+<input type=button value=sound onClick="{
+    mySound1.play()
+}">
