@@ -1,0 +1,29 @@
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<script>
+    function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,de,ru', layout:google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+
+    }
+</script>
+
+
+<h1 align=center>t2a10-translate-name</h1>
+
+<div id="google_translate_element">I really like javascript</div>
+Rate
+<br><input type=text id="myText04" value="Put Rate Here"><br>
+Volume
+<br><input type=text id="myText05" value="Put Volume Here"><br>
+Pitch
+<br><input type=text id="myText03" value="Put Pitch Here"><br>
+
+<input  type="button" value="initilize speak" onclick="{ 
+ let x = document.getElementById('myText03').value
+let y = document.getElementById('myText04').value
+let q = document.getElementById('myText05').value
+
+   let myVoice = 'Russian Female'
+   responsiveVoice.speak(document.getElementById('google_translate_element').innerText, myVoice, {pitch: x, rate: y, volume : q})                                              
+}"><br><br>
