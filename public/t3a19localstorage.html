@@ -1,5 +1,5 @@
 
-Version 0.0.0.1
+Version 0.0.0.2
 <BODY text="#000000" link="#000000" vlink="#000000">
 <html>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@ random_bg_color();
 </body>
 </html>
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a19 Local Storage </center> </h1></a>
-
+<hr>
 <body onload="{
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
@@ -45,3 +45,22 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
 
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+
+<p id="demo"></p>
+
+<script>
+clickCounter();
+
+function clickCounter() {
+  if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+  } else {
+    localStorage.clickcount = 1;
+  }
+  document.getElementById("demo").innerHTML = localStorage.clickcount;
+}
+</script>
+
+</body>
+</html>
