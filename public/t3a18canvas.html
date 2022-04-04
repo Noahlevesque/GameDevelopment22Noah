@@ -1,5 +1,5 @@
 
-version 0.0.0.5
+version 0.0.0.6
 <html>
   <meta charset="utf-8">
 <body>
@@ -39,11 +39,12 @@ console.log(Math.random());
 
 You use loops and variables to make fast fancy drawings <br><br>
 
+
 <input type=button value=".lineTo(30,200)" onclick="{
    myContext.beginPath();
    myContext.lineWidth = 1;   
-   myContext.moveTo.getRandomInt(max).Math.floor(Math.random() * max);
-   myContext.lineTo.getRandomInt(max).Math.floor(Math.random() * max);
+   myContext.moveTo(20,10);
+   myContext.lineTo(30,200);
    myContext.stroke();
 }">
 
@@ -71,7 +72,6 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.moveTo(300,100);
    myContext.quadraticCurveTo(100,220,240,110);
    myContext.stroke();
-
 }">
 
 
@@ -81,10 +81,8 @@ You use loops and variables to make fast fancy drawings <br><br>
    myGradient.addColorStop(0, 'red');
    myGradient.addColorStop(0.5, 'blue');
    myGradient.addColorStop(1, 'yellow');
-
    myContext.fillStyle = myGradient;
    myContext.fillRect(100, 300, 200, 400);
-
    // reset fillstyle
    myContext.fillStyle = 'black';
 }"><br><br>
