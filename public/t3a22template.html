@@ -1,4 +1,4 @@
-Version 0.0.0.7
+Version 0.0.0.8
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a22 Game Template</center> </h1></a>
 <hr>
 
@@ -64,4 +64,7 @@ function myCheckHit(){
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
   myCheckHit()     // checks for all collisions
 }"><br><br>
-
+<input type=button value="Image Left Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + -10 + 'px'
+  myCheckHit()     // checks for all collisions
+}"><br><br>
