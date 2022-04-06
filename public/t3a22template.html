@@ -1,4 +1,4 @@
-Version 0.0.0.10
+Version 0.0.0.12
  <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> T3a22 Game Template</center> </h1></a>
 <hr>
 
@@ -81,9 +81,11 @@ function myCheckHit(){
 }">
  <input type=button value="Image up Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px'
-  myCheckHit()    
+  myCheckHit()  
+  }">
   <input type=button value="Image down Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
   myCheckHit()  
+ }">       
 <img id="myImg01" style="position:absolute; width:100px; height:80px; top:0px; left:50px;"  src="https://assets.echomtg.com/magic/cards/cropped/297.hq.jpg">
 <img id="myImg02" style="position:absolute; width:100px; height:80px; top:0px; left:250px;" src="https://cdn.cardsrealm.com/images/cartas/lea-limited-edition-alpha/en/crop-med/burrowing-138.jpeg?1895">
