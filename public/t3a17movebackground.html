@@ -1,4 +1,4 @@
-version 0.0.0.36
+version 0.0.0.37
 <html>
 
 <BODY  text="#FFFFFF" link="#FFFFFF" vlink="#000000">
@@ -34,11 +34,21 @@ version 0.0.0.36
   document.getElementById('myBody').style.backgroundPosition =myTemp
 
 }">
-<input type=button value="Auto Background up" onclick="{
+<input type=button value="Auto Background down" onclick="{
   clearInterval(myClock)
   let myTemp = '100px 0px'
   myClock = setInterval(function(){
       myGlobalX += 5
+      myTemp =  '100px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '100px' 
+      document.getElementById('myBody').style.backgroundPosition = myTemp
+  }, 100)
+    
+}">
+<input type=button value="Auto Background up" onclick="{
+  clearInterval(myClock)
+  let myTemp = '100px 0px'
+  myClock = setInterval(function(){
+      myGlobalX += -5
       myTemp =  '100px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '100px' 
       document.getElementById('myBody').style.backgroundPosition = myTemp
   }, 100)
