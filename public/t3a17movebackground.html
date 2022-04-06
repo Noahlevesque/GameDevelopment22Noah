@@ -26,7 +26,13 @@ version 0.0.0.22
   document.getElementById('myBody').style.backgroundPosition =myTemp
 
 }">
+<input id="myButton03" type=button value="Move Background up" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp =  myGlobalX + 'px 100px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
 
+}">
 <input id="myButton02" type=button value="Move Background Right" onclick="{
   myTemp = '100px 0px'
   myGlobalX -= -5
@@ -50,17 +56,19 @@ version 0.0.0.22
     
 }">
 <br>
-<input type=button value="Image Right" onclick="{
-  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
-}">
- <input type=button value="Image Left" onclick="{
-  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
-}">
- <input type=button value="Image Down" onclick="{
-  document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
-}">
  <input type=button value="Image Up" onclick="{
   document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
 }">
+  <input type=button value="Image Down" onclick="{
+  document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}">
+  <input type=button value="Image Left" onclick="{
+  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}">
+ <input type=button value="Image Right" onclick="{
+  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+}">
+
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img id="myImage01" style="position:relative; width:100px; height:80px; top:0px; left:0px;" src="https://www.kindpng.com/picc/m/339-3393939_car-hand-drawn-toy-car-hand-drawing-png.png">
