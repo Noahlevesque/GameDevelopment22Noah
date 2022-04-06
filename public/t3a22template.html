@@ -69,11 +69,21 @@ function myCheckHit(){
 
 <input type=button value="Image Right Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
-  myCheckHit()     // checks for all collisions
+  myCheckHit()    
 }"><br><br>
 <input type=button value="Image Left Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + -10 + 'px'
-  myCheckHit()     // checks for all collisions
-}"><br><br>
+  myCheckHit()    
+}">
+ <input type=button value="Image up Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px'
+  myCheckHit()   
+}">
+ <input type=button value="Image up Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px'
+  myCheckHit()    
+  <input type=button value="Image down Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+  myCheckHit()  
 <img id="myImg01" style="position:absolute; width:100px; height:80px; top:0px; left:50px;"  src="https://assets.echomtg.com/magic/cards/cropped/297.hq.jpg">
 <img id="myImg02" style="position:absolute; width:100px; height:80px; top:0px; left:250px;" src="https://cdn.cardsrealm.com/images/cartas/lea-limited-edition-alpha/en/crop-med/burrowing-138.jpeg?1895">
