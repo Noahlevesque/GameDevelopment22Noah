@@ -30,7 +30,7 @@ function myHitOther(my1,my2){
 
 function myCheckHit(){
    if ( myHitOther('myImg01','myImg02') ){
-       alert('you lose')  
+       alert('you win!')  
        document.getElementById('myImg01').style.left = '20px'
        location = 't2a13-keydown.html'  // go to your next level
    }
@@ -56,7 +56,7 @@ function myCheckHit(){
   }, 100)
     
 }">
-<input type=button value="Auto Background Left" onclick="{
+<input type=button value="Auto Background Right" onclick="{
   clearInterval(myClock)
   let myTemp = '100px 0px'
   myClock = setInterval(function(){
