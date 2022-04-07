@@ -1,4 +1,4 @@
-Version 0.0.0.1
+Version 0.0.0.2
 <html>
   <meta charset="utf-8">
 <body>
@@ -39,8 +39,8 @@ function myIsOnScreen(){
       clearInterval(myInterval)
       myInterval = setInterval(function(){
    
-         document.getElementById('myDiv01').style.left = 
-             parseInt(document.getElementById('myDiv01').style.left) + 3
+         document.getElementById('myDiv01').style.top = 
+             parseInt(document.getElementById('myDiv01').style.top) + 3
          myIsOnScreen()
       } ,20)
    }
@@ -54,7 +54,7 @@ function myIsOnScreen(){
       myInterval = setInterval(function(){
    
          document.getElementById('myDiv01').style.left = 
-             parseInt(document.getElementById('myDiv01').style.left) + 3
+             parseInt(document.getElementById('myDiv01').style.left) + -3
          myIsOnScreen()
       } ,20)
    }
@@ -66,8 +66,8 @@ function myIsOnScreen(){
       clearInterval(myInterval)
       myInterval = setInterval(function(){
    
-         document.getElementById('myDiv01').style.left = 
-             parseInt(document.getElementById('myDiv01').style.left) + 3
+         document.getElementById('myDiv01').style.top = 
+             parseInt(document.getElementById('myDiv01').style.top) + -3
          myIsOnScreen()
       } ,20)
    }
