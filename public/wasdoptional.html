@@ -1,4 +1,4 @@
-Version 0.0.0.2
+Version 0.0.0.3
 <html>
   <meta charset="utf-8">
 <body>
@@ -29,6 +29,11 @@ function myIsOnScreen(){
      document.getElementById('myDiv01').style.left = '397px'
    }
 }
+function myScreen(){
+   if (parseInt(document.getElementById('myDiv01').style.top) > 400) {
+     document.getElementById('myDiv01').style.top = '397px'
+   }
+}
 
 </script>
 
@@ -40,8 +45,8 @@ function myIsOnScreen(){
       myInterval = setInterval(function(){
    
          document.getElementById('myDiv01').style.top = 
-             parseInt(document.getElementById('myDiv01').style.top) + 3
-         myIsOnScreen()
+             parseInt(document.getElementById('myDiv01').style.top) + -3
+         myScreen()
       } ,20)
    }
 }">
@@ -67,8 +72,8 @@ function myIsOnScreen(){
       myInterval = setInterval(function(){
    
          document.getElementById('myDiv01').style.top = 
-             parseInt(document.getElementById('myDiv01').style.top) + -3
-         myIsOnScreen()
+             parseInt(document.getElementById('myDiv01').style.top) + 3
+         myScreen()
       } ,20)
    }
 }">
