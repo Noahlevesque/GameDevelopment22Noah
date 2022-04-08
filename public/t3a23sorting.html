@@ -1,4 +1,4 @@
-Version 0.0.0.6
+Version 0.0.0.7
 <html>
   <meta charset="utf-8">
 <body>
@@ -40,10 +40,9 @@ random_bg_color();
   }
    document.getElementById('myDiv01').innerHTML = myTemp
 }">
-
+	
 <input type=button value="Sort" onclick="{
-
- for (let myLoop = 0;   myLoop < myMax;  myLoop++) {
+  for (let myLoop = 0;   myLoop < myMax;  myLoop++) {
 	let myTemp = 0
 	for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
 		if (myCards[myLoop] >= myCards[myLoop+1]) {
@@ -56,7 +55,6 @@ random_bg_color();
 		document.getElementById('myShow').click();
 		}
 	}
-  }
 }">
 
 <dir id="myDiv01"></div>
