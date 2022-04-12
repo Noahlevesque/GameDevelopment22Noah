@@ -1,4 +1,4 @@
-Version 0.0.0.15
+Version 0.0.0.16
 <html>
   <meta charset="utf-8">
 <body>
@@ -23,28 +23,24 @@ random_bg_color();
 
 <hr>
 <script>
-   let myMax = 52
-   let myCards = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
+  let myMax = 52      // 52 when working
+  let myCards = new Array(myMax) 
 </script>
 
 <input type=button value="Set Random" onclick="{
-  for (var myLoop = myCards.length - 1; myLoop > 0; myLoop--) {
-        var myTemp = Math.floor(Math.random() * (myLoop + 1));
-        var temp = myCards[myLoop];
-        myCards[myLoop] = myCards[myTemp];
-        myCards[myTemp] = temp;	
-	}
-	document.getElementById('myShow').click();
+  for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
+     myCards[myLoop] = Math.floor(Math.random()*10)
+  }
 }">
 
-<input type=button id="myShow" value="Show" onclick="{
+<input type=button value="Show" onclick="{
   let myTemp = ''
-  for (let myLoop = 0;  myLoop < myMax;  myLoop++){
+  for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myTemp += myLoop + ' = '+ myCards[myLoop] + '<br>'
   }
    document.getElementById('myDiv01').innerHTML = myTemp
 }">
-
+	
 <input type=button value="Sort" onclick="{
   for (let myLoop = 0;   myLoop < myMax;  myLoop++) {
 	let myTemp = 0
