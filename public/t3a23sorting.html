@@ -1,4 +1,4 @@
-Version 0.0.0.20
+Version 0.0.0.21
 <html>
   <meta charset="utf-8">
 <body>
@@ -27,6 +27,12 @@ random_bg_color();
   let myMax = 52
    let myCards = new Array(myMax) 
 </script>
+<script>
+const points = [x];
+let x = document.getElementById('myDiv01').value;
+points.sort(function(a, b){return a-b});
+document.getElementById("myDiv01").innerHTML = points;
+</script>
 
 <input type=button value="Set Random" onclick="{
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
@@ -42,19 +48,12 @@ random_bg_color();
    document.getElementById('myDiv01').innerHTML = myTemp
 }">
 <input type=button value="Sort" onclick="{
-  for (let myLoop = 0;   myLoop < myMax;  myLoop++) {
-	let myTemp = 0
-	for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
-		if (myCards[myLoop] >= myCards[myLoop+1]) {
-			myTemp = myCards[myLoop]
-			myCards[myLoop] = myCards[myLoop+1]
-			myCards[myLoop+1] = myTemp
-		} else {
-			myTemp = myTemp
-		}
-		document.getElementById('myShow').click();
-		}
-	}
+const points = [x];
+let x = document.getElementById('myDiv01').value;
+points.sort(function(a, b){return a-b});
+document.getElementById('myDiv01').innerHTML = points;
+
+
 }">
 
 <div id="myDiv01"></div>
