@@ -30,7 +30,7 @@ random_bg_color();
    let myCards = [myMax]
 </script>
 
-<input type=button value="Set Random" onclick="{
+<input type=button value="Show" onclick="{
   for (var myLoop = myCards.length - 1; myLoop > 0; myLoop--) {
         var myTemp = Math.floor(Math.random() * (myLoop + 1));
         var temp = myCards[myLoop];
@@ -40,7 +40,7 @@ random_bg_color();
 	document.getElementById('myShow').click();
 }">
 
-<input type=button id="myShow" value="Show" onclick="{
+<input type=button id="myShow" value="Set Random" onclick="{
   let myTemp = ''
   for (let myLoop = 0;  myLoop < myMax;  myLoop++){
      myTemp += myLoop + ' = '+ myCards[myLoop] + '<br>'
