@@ -5,6 +5,7 @@
 <script type="text/javascript" src="mandelbrot-fractal.js"></script>
 </head>
 <body>
+    
 <script>
 window.onload = function() {
     // Get the canvas and context
@@ -175,8 +176,21 @@ window.onload = function() {
     // Call init to start the game
     init();
 };
+{
+    canvas = document.getElementById("viewport");
+    canvas.width = document.body.clientWidth; //document.width is obsolete
+    canvas.height = document.body.clientHeight; //document.height is obsolete
+    canvasW = canvas.width;
+    canvasH = canvas.height;
+
+    if( canvas.getContext )
+    {
+        setup();
+        setInterval( run , 33 );
+    }
+}
 </script>
-<canvas id="viewport" width="640" height="480"></canvas>
+<canvas id="viewport"></canvas>
 
 </body>
 </html>
