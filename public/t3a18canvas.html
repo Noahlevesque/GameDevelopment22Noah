@@ -1,5 +1,5 @@
 <! DOCTYPE html>
-version 0.0.0.10
+version 0.0.0.11
 <html>
   <meta charset="utf-8">
 <body>
@@ -94,13 +94,23 @@ You use loops and variables to make fast fancy drawings <br><br>
 }">
 <input type=button value="hibgi)" onclick="{
 myContext.beginPath();
-cx.moveTo(10, 90);
-  cx.bezierCurveTo(10, 10, 90, 10, 50, 90);
-  cx.lineTo(90, 10);
-  cx.lineTo(10, 10);
-  cx.closePath();
-  cx.stroke();
-  }">
+  let cx = document.querySelector("canvas").getContext("2d");
+  let total = results
+    .reduce((sum, {count}) => sum + count, 0);
+ 
+  let currentAngle = -0.5 * Math.PI;
+  for (let result of results) {
+    let sliceAngle = (result.count / total) * 2 * Math.PI;
+    cx.beginPath();
+    // center=100,100, radius=100
+    // from current angle, clockwise by slice's angle
+    cx.arc(100, 100, 100,
+           currentAngle, currentAngle + sliceAngle);
+    currentAngle += sliceAngle;
+    cx.lineTo(100, 100);
+    cx.fillStyle = result.color;
+    cx.fill();
+  }
 
 
 
@@ -119,6 +129,7 @@ cx.moveTo(10, 90);
   }
   cx.translate(300, 0);
   branch(60, 0.5, 0.8);
+  myContext.stroke();                                                         
 }">
 
 <input type=button value="Clear all" onclick="{
