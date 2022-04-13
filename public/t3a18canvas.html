@@ -1,5 +1,5 @@
-
-version 0.0.0.9
+<! DOCTYPE html>
+version 0.0.0.10
 <html>
   <meta charset="utf-8">
 <body>
@@ -16,6 +16,8 @@ function random_bg_color() {
 
 random_bg_color();
 
+  
+ 
   </script>
 </body>
 </html>
@@ -89,6 +91,34 @@ You use loops and variables to make fast fancy drawings <br><br>
 
 <input type=button value="clearRect(20, 20, 50, 50)" onclick="{
    myContext.clearRect(20, 20, 50, 50);
+}">
+<input type=button value="hibgi)" onclick="{
+myContext.beginPath();
+cx.moveTo(10, 90);
+  cx.bezierCurveTo(10, 10, 90, 10, 50, 90);
+  cx.lineTo(90, 10);
+  cx.lineTo(10, 10);
+  cx.closePath();
+  cx.stroke();
+  }">
+
+
+
+  <input type=button value="buttin" onclick="{
+  let cx = document.querySelector("canvas").getContext("2d");
+  function branch(length, angle, scale) {
+    cx.fillRect(0, 0, 1, length);
+    if (length < 8) return;
+    cx.save();
+    cx.translate(0, length);
+    cx.rotate(-angle);
+    branch(length * scale, angle, scale);
+    cx.rotate(2 * angle);
+    branch(length * scale, angle, scale);
+    cx.restore();
+  }
+  cx.translate(300, 0);
+  branch(60, 0.5, 0.8);
 }">
 
 <input type=button value="Clear all" onclick="{
