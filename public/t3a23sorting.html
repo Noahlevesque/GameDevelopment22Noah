@@ -1,4 +1,4 @@
-Version 0.0.0.23
+Version 0.0.0.24
 <html>
   <meta charset="utf-8">
 <body>
@@ -29,14 +29,11 @@ random_bg_color();
 </script>
   
 <input type=button value="Set Random" onclick="{
-  for (var myLoop = myCards.length - 1; myLoop > 0; myLoop--) {
-        var myTemp = Math.floor(Math.random() * (myLoop + 1));
-        var temp = myCards[myLoop];
-        myCards[myLoop] = myCards[myTemp];
-        myCards[myTemp] = temp;	
-	}
-
+  for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
+     myCards[myLoop] = Math.floor(Math.random()*10)
+  }
 }">
+
 
 <input type=button id="myShow" value="Show" onclick="{
   let myTemp = ''
