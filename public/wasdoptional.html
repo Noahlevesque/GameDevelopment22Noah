@@ -1,37 +1,10 @@
-Version 0.0.0.7
-<html>
-  <meta charset="utf-8">
-<body>
-<script>
-function random_bg_color() {
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-    var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
-  
-    document.body.style.background = bgColor;
-    }
-
-random_bg_color();
-
-  </script>
-</body>
-</html>
-<BODY text="#000000" link="#000000" vlink="#000000">
- <h1> <center> <a list-style-type: none; style=text-decoration:none; href= "https://noahlevesque.github.io/GameDevelopment22Noah/public/index.html"> WASD</center> </h1></a>
-
+ 
 <script>
    let myInterval
  
 function myIsOnScreen(){
    if (parseInt(document.getElementById('myDiv01').style.left) > 400) {
-     document.getElementById('myDiv01').style.left = '10px'
-   }
-}
-function myScreen(){
-   if (parseInt(document.getElementById('myDiv01').style.top) > 400) {
-     document.getElementById('myDiv01').style.top = '10px'
+     document.getElementById('myDiv01').style.left = '397px'
    }
 }
 
@@ -39,47 +12,7 @@ function myScreen(){
 
 <body onkeydown="{
      let myKey = event.key
- // let myKey = String.toLowerCase(event.key)
-   if (myKey == 'w') {
-      clearInterval(myInterval)
-      myInterval = setInterval(function(){
-   
-         document.getElementById('myDiv01').style.top = 
-             parseInt(document.getElementById('myDiv01').style.top) + -3
-         myScreen()
-      } ,10)
-   }
-}">
-  
-  <body onkeydown="{
-     let myKey = event.key
-   let myKey = String.toLowerCase(event.key)
-   if (myKey == 'a') {
-      clearInterval(myInterval)
-      myInterval = setInterval(function(){
-   
-         document.getElementById('myDiv01').style.left = 
-             parseInt(document.getElementById('myDiv01').style.left) + -3
-         myIsOnScreen()
-      } ,20)
-   }
-}">
-<body onkeydown="{
-     let myKey = event.key
-   let myKey = String.toLowerCase(event.key)
-   if (myKey == 's') {
-      clearInterval(myInterval)
-      myInterval = setInterval(function(){
-   
-         document.getElementById('myDiv01').style.top = 
-             parseInt(document.getElementById('myDiv01').style.top) + 3
-         myScreen()
-      } ,20)
-   }
-}">
-<body onkeydown="{
-     let myKey = event.key
-   let myKey = String.toLowerCase(event.key)
+ //  let myKey = String.toLowerCase(event.key)
    if (myKey == 'd') {
       clearInterval(myInterval)
       myInterval = setInterval(function(){
@@ -90,6 +23,10 @@ function myScreen(){
       } ,20)
    }
 }">
+
+<h1 align=center>t1a13-onkeydown-fred</h1>
+Get WASD working, what about a second object controlled by arrows or IJKL<br>
+
 <div id="myDiv01" style="position:absolute; left:200; top:200; " >Fred</div>
 
 </body>
