@@ -1,5 +1,5 @@
-Version 0.0.0.15
-<!DOCTYPE HTML>
+<html>
+<body onload="docReady()" onkeydown="" onkeyup="">
 <h1>
 
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -9,6 +9,8 @@ Version 0.0.0.15
 <body  text="#000000" link="#000000" vlink="#000000" id="myBody" style="background-repeat:repeat; background-size: 100%" background="https://www.robalexander.com/wp-content/uploads/2017/05/savannah.jpg">
 <br><br><br><br>
 
+
+ 
 <script>
 
    let myGlobalX = 0
@@ -42,23 +44,57 @@ function myCheckHit(){
 
 
 </script>
- <input type=button value="Image up Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px'
-  myCheckHit()   
-}">
-  <input type=button value="Image down Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
-  myCheckHit()  
- }"> 
- <input type=button value="Image Left Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + -10 + 'px'
-  myCheckHit()    
-}">
-<input type=button value="Image Right Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
-  myCheckHit()    
-}"><br><br>
-   
+ <script type="text/javascript">
+            function leftArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+            }
+
+            function rightArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+            }
+
+            function upArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+            }
+
+            function downArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+            }
+
+            function moveSelection(evt) {
+                switch (evt.keyCode) {
+                    case 37:
+                    leftArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 39:
+                    rightArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 38:
+                    upArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 40:
+                    downArrowPressed();
+                    myCheckHit();
+                    break;
+                  
+                    }
+                };
+
+        function docReady()
+        {
+          
+          window.addEventListener('keydown', moveSelection);
+        }
+
+  </script>
 <img id="myImg01" style="position:absolute; width:100px; height:80px; top:0px; left:50px;"  src="https://assets.echomtg.com/magic/cards/cropped/297.hq.jpg">
 <img id="myImg02" style="position:absolute; width:100px; height:80px; top:0px; left:250px;" src="https://cdn.cardsrealm.com/images/cartas/lea-limited-edition-alpha/en/crop-med/burrowing-138.jpeg?1895">
 </html>
