@@ -55,8 +55,6 @@ function myCheckHit(){
        location = 'gamelevel2.html'  // go to your next level
    }    
     
-   
-
    if ( myHitOther('myImg01','myImg03') ){
        alert('you lose')  
        document.getElementById('myImg01').style.left = '20px'
@@ -100,23 +98,23 @@ function myCheckHit(){
  
             function leftArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) - 5 + 'px';
+            element.style.left = parseInt(element.style.left) - 8 + 'px';
             }
 
             function rightArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) + 5 + 'px';
+            element.style.left = parseInt(element.style.left) + 8 + 'px';
 
             }
 
             function upArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) - 5 + 'px';
+            element.style.top = parseInt(element.style.top) - 8 + 'px';
             }
 
             function downArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) + 5 + 'px';
+            element.style.top = parseInt(element.style.top) + 8 + 'px';
             }
 
             function moveSelection(evt) {
