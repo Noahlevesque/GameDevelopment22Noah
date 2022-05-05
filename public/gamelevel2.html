@@ -54,11 +54,7 @@ function myCheckHit(){
        document.getElementById('myImg01').style.left = '20px'
        location = 'gamelevel2.html'  // go to your next level
    }    
-   
-   if ( myHitOther('myImg01','myImg03') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-   }   
+    
    
 
    if ( myHitOther('myImg01','myImg03') ){
@@ -77,7 +73,7 @@ function myCheckHit(){
    if ( myHitOther('myImg01','myImg04') ){
        alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-      location = 'https://www.google.ca'
+      location = 'gamelevel2.html'
    }
 
    // more if statements here
@@ -91,6 +87,7 @@ function myCheckHit(){
   if( parseInt(document.getElementById('myImg03').style.top) > window.innerHeight - document.getElementById('myImg03').height ){
        document.getElementById('myImg03').style.top = '10px'
    }
+   
   if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
        document.getElementById('myImg02').style.left = (window.innerWidth / 2) + 'px'
    }
