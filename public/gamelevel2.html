@@ -6,7 +6,15 @@
      document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
      document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
      myCheckHit()
-  }, 25);
+  }, 30);
+    clearInterval(myTimer03)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) -2) 
+     let my02y = Math.floor((Math.random() * 10) - 2) 
+     document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + my02x + 'px'
+     document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
   docReady();
    
  }">
@@ -19,7 +27,7 @@
    let myClock
    let myTimer01
    let myTimer02
-
+ let myTimer03
    // global functions here
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -42,15 +50,27 @@ function myHitOther(my1,my2){
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-   }   
+      alert('you lose')  
+       document.getElementById('myImg01').style.left = '20px'
+       location = 'gamelevel2.html'  // go to your next level
+   }    
    
    if ( myHitOther('myImg01','myImg03') ){
        //alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
    }   
    
+
+   if ( myHitOther('myImg01','myImg03') ){
+       alert('you lose')  
+       document.getElementById('myImg01').style.left = '20px'
+       location = 'gamelevel2.html'  // go to your next level
+   }   
+   
+   if ( myHitOther('myImg01','myImg03') ){
+       //alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+   }   
 
 
    // YOU WIN and go to next level!
@@ -74,7 +94,9 @@ function myCheckHit(){
   if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
        document.getElementById('myImg02').style.left = (window.innerWidth / 2) + 'px'
    }
-
+  if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
+       document.getElementById('myImg02').style.top = '10px'
+   }
 
 }
 
