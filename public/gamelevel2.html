@@ -1,13 +1,7 @@
+
 <body id="myBody"  onkeydown="" onkeyup="" onLoad="{
+    docReady();
   clearInterval(myTimer02)
-  myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 10) -2) 
-     let my02y = Math.floor((Math.random() * 10) - 2) 
-     document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
-     document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
-     myCheckHit()
-  }, 30);
-    clearInterval(myTimer03)
   myTimer02 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 10) -2) 
      let my02y = Math.floor((Math.random() * 10) - 2) 
@@ -15,10 +9,23 @@
      document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
      myCheckHit()
   }, 30);
-  docReady();
+    clearInterval(myTimer03)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) -2) 
+     let my02y = Math.floor((Math.random() * 10) - 2) 
+     document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
+     document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+
    
  }">
-
+<style>
+body {
+  background-image: url('https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/90f25d92550acbc.png');
+  background-repeat: repeat,
+	}
+</style>
 
 
 <script type="text/javascript">
@@ -50,19 +57,19 @@ function myHitOther(my1,my2){
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
-      alert('you lose')  
+     alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
        location = 'gamelevel2.html'  // go to your next level
    }    
     
    if ( myHitOther('myImg01','myImg03') ){
-       alert('you lose')  
+       alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
        location = 'gamelevel2.html'  // go to your next level
    }   
    
    if ( myHitOther('myImg01','myImg03') ){
-       //alert('you lose')
+      alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
    }   
 
@@ -148,6 +155,6 @@ function myCheckHit(){
 </script>
 
 <img id="myImg01" src="myImgNew.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
-<img id="myImg02" src="myImgNew.jpg" title="myImg02" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
-<img id="myImg03" src="myImgNew.jpg" title="myImg03" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
-<img id="myImg04" src="myImgNew.jpg" title="myImg04" style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
+<img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg02" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
+<img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg03" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
+<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="myImg04" style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
