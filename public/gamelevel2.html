@@ -1,6 +1,19 @@
 
 <body id="myBody"  onkeydown="" onkeyup="" onLoad="{
-    docReady();
+    
+      
+      //automove background
+      
+      clearInterval(myClock)
+  let myTemp = '100px 0px'
+  myClock = setInterval(function(){
+      myGlobalX += 5
+      myTemp =  '50px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '50px' 
+      document.getElementById('myBody').style.backgroundPosition = myTemp
+  }, 200)
+
+    //fireball random move
+    
   clearInterval(myTimer02)
   myTimer02 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 10) -2) 
@@ -11,14 +24,22 @@
   }, 30);
     clearInterval(myTimer03)
   myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 10) -2) 
-     let my02y = Math.floor((Math.random() * 10) - 2) 
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
      document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
      document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
      myCheckHit()
   }, 30);
-
-   
+  //chest random move
+   clearInterval(myTimer04)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) +2) 
+     let my02y = Math.floor((Math.random() * 10) + 2) 
+     document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
+     document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 60);
+   docReady();
  }">
 <style>
 body {
@@ -35,7 +56,8 @@ body {
    let myTimer01
    let myTimer02
  let myTimer03
-   // global functions here
+ let myTimer04
+   // collision
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -59,13 +81,13 @@ function myCheckHit(){
    if ( myHitOther('myImg01','myImg02') ){
      alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // go to your next level
+       location = 'gamelevel2.html'  // psudeo refres
    }    
     
    if ( myHitOther('myImg01','myImg03') ){
        alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // go to your next level
+       location = 'gamelevel2.html'  // psudeo refresh
    }   
    
    if ( myHitOther('myImg01','myImg03') ){
@@ -84,7 +106,7 @@ function myCheckHit(){
    // more if statements here
 
 
-   // checking for window boundaries
+   // bounce off page boundaries
 
   if( parseInt(document.getElementById('myImg03').style.left) > window.innerWidth - document.getElementById('myImg03').width ){
        document.getElementById('myImg03').style.left = '10px'
@@ -98,11 +120,17 @@ function myCheckHit(){
    }
   if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
        document.getElementById('myImg02').style.top = '10px'
+    }   
+    if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
+       document.getElementById('myImg04').style.left = (window.innerWidth / 2) + 'px'
+   }
+  if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
+       document.getElementById('myImg04').style.top = '10px'     
    }
 
 }
 
- 
+ //arrow key movement
             function leftArrowPressed() {
             var element = document.getElementById("myImg01");
             element.style.left = parseInt(element.style.left) - 8 + 'px';
@@ -110,18 +138,18 @@ function myCheckHit(){
 
             function rightArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) + 8 + 'px';
+            element.style.left = parseInt(element.style.left) + 12 + 'px';
 
             }
 
             function upArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) - 8 + 'px';
+            element.style.top = parseInt(element.style.top) - 12 + 'px';
             }
 
             function downArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) + 8 + 'px';
+            element.style.top = parseInt(element.style.top) + 12 + 'px';
             }
 
             function moveSelection(evt) {
