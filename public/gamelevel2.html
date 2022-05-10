@@ -5,12 +5,12 @@
       //automove background
       
       clearInterval(myClock)
-  let myTemp = '100px 0px'
+  let myTemp = '50px 0px'
   myClock = setInterval(function(){
-      myGlobalX += 5
-      myTemp =  '50px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '50px' 
+      myGlobalX += 2.5
+      myTemp =  '7.5px ' + myGlobalX + 'px'        
       document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 200)
+  }, 150)
 
     //fireball random move
     
@@ -33,12 +33,12 @@
   //chest random move
    clearInterval(myTimer04)
   myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 10) +2) 
-     let my02y = Math.floor((Math.random() * 10) + 2) 
+     let my02x = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
+     let my02y = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
      document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
      document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
      myCheckHit()
-  }, 60);
+  }, 200);
    docReady();
  }">
 <style>
@@ -58,6 +58,8 @@ body {
  let myTimer03
  let myTimer04
    // collision
+   
+
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -80,21 +82,16 @@ function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
      alert('you lose ')  
-       document.getElementById('myImg01').style.left = '20px'
+       document.getElementById('myImg01').style.left = '200px'
        location = 'gamelevel2.html'  // psudeo refres
    }    
     
    if ( myHitOther('myImg01','myImg03') ){
        alert('you lose ')  
-       document.getElementById('myImg01').style.left = '20px'
+       document.getElementById('myImg01').style.left = '200px'
        location = 'gamelevel2.html'  // psudeo refresh
    }   
    
-   if ( myHitOther('myImg01','myImg03') ){
-      alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-   }   
-
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
@@ -102,10 +99,11 @@ function myCheckHit(){
       document.getElementById('myImg01').style.left = '20px'
       location = 'gamelevel2.html'
    }
-
-   // more if statements here
- 
-
+if ( myHitOther('myImg01','myImg05') ){
+    alert('you lose ')  
+        document.getElementById('myImg01').style.left = '20px'
+       location = 'gamelevel2.html'  // psudeo refresh
+   }    
    // bounce off page boundaries
 
   if( parseInt(document.getElementById('myImg03').style.left) > window.innerWidth - document.getElementById('myImg03').width ){
@@ -121,19 +119,17 @@ function myCheckHit(){
   if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
        document.getElementById('myImg02').style.top = '10px'
     }   
-    if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
-       document.getElementById('myImg04').style.left = (window.innerWidth / 2) + 'px'
+  if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
+       document.getElementById('myImg04').style.left = '10px'
    }
   if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
-       document.getElementById('myImg04').style.top = '10px'     
-   }
-
+       document.getElementById('myImg04').style.top = '10px'
+    } 
 }
-
  //arrow key movement
             function leftArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) - 8 + 'px';
+            element.style.left = parseInt(element.style.left) - 12 + 'px';
             }
 
             function rightArrowPressed() {
@@ -186,3 +182,7 @@ function myCheckHit(){
 <img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg02" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
 <img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg03" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
 <img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="myImg04" style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
+
+<img id="myImg05" src="https://www.pinclipart.com/picdir/big/31-311739_flames-clipart-lake-fire-clip-art-fire-ball.png" title="myImg05" style="position:relative; width:60px; height:221px; left:250px; top:250px;">
+
+
