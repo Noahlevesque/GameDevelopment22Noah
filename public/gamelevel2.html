@@ -4,7 +4,7 @@
       
       //automove background
       
-      clearInterval(myClock)
+      clearInterval(myClock)A
   let myTemp = '50px 0px'
   myClock = setInterval(function(){
       myGlobalX += 2.5
@@ -23,7 +23,7 @@
      myCheckHit()
   }, 30);
     clearInterval(myTimer03)
-  myTimer02 = setInterval(function(){
+  myTimer03 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 20) -6) 
      let my02y = Math.floor((Math.random() * 20) - 6) 
      document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
@@ -32,13 +32,29 @@
   }, 30);
   //chest random move
    clearInterval(myTimer04)
-  myTimer02 = setInterval(function(){
+  myTimer04 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
      let my02y = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
      document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
      document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
      myCheckHit()
   }, 200);
+   clearInterval(myTimer05)
+  myTimer05 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) + my02x + 'px'
+     document.getElementById('myImg06').style.top  = parseInt(document.getElementById('myImg06').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+     clearInterval(myTimer06)
+  myTimer06 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg07').style.left = parseInt(document.getElementById('myImg07').style.left) + my02x + 'px'
+     document.getElementById('myImg07').style.top  = parseInt(document.getElementById('myImg07').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
    docReady();
  }">
 <style>
@@ -57,6 +73,8 @@ body {
    let myTimer02
  let myTimer03
  let myTimer04
+  let myTimer05
+ let myTimer06
    // collision
    
 
@@ -185,4 +203,6 @@ if ( myHitOther('myImg01','myImg05') ){
 
 <img id="myImg05" src="https://www.pinclipart.com/picdir/big/31-311739_flames-clipart-lake-fire-clip-art-fire-ball.png" title="myImg05" style="position:relative; width:60px; height:221px; left:250px; top:250px;">
 
+<img id="myImg06" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg06" style="position:absolute; width:100px; height:80px;  left:890px; top:300px;">
+<img id="myImg07" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg07" style="position:absolute; width:100px; height:80px;  left:230px; top:150px;">
 
