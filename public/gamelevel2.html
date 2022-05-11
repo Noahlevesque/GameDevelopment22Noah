@@ -12,7 +12,22 @@
   }, 200)
     //fireball random move
     
-	@@ -33,12 +33,12 @@
+  clearInterval(myTimer02)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) -2) 
+     let my02y = Math.floor((Math.random() * 10) - 2) 
+     document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + my02x + 'px'
+     document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+    clearInterval(myTimer03)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
+     document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
   //chest random move
    clearInterval(myTimer04)
   myTimer02 = setInterval(function(){
