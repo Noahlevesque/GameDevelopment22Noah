@@ -33,8 +33,8 @@
   //chest random move
    clearInterval(myTimer04)
   myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
-     let my02y = Math.floor((Math.random() * 10 * 3) + 2 - 10) 
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) -6) 
      document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
      document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
      myCheckHit()
