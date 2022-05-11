@@ -2,7 +2,7 @@
 <body id="myBody"  onkeydown="" onkeyup="" onLoad="{
     
       
-      //automove background
+     
       
       clearInterval(myClock)A
   let myTemp = '50px 0px'
@@ -12,7 +12,7 @@
       document.getElementById('myBody').style.backgroundPosition = myTemp
   }, 150)
 
-    //fireball random move
+ 
     
   clearInterval(myTimer02)
   myTimer02 = setInterval(function(){
@@ -30,7 +30,7 @@
      document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
      myCheckHit()
   }, 30);
-  //chest random move
+
    clearInterval(myTimer04)
   myTimer02 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 20) -6) 
