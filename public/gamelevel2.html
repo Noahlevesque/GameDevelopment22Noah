@@ -1,82 +1,43 @@
-
 <body id="myBody"  onkeydown="" onkeyup="" onLoad="{
-
-      
-     
-      
-      clearInterval(myClock)A
-  let myTemp = '50px 0px'
-  myClock = setInterval(function(){
-      myGlobalX += 2.5
-      myTemp =  '7.5px ' + myGlobalX + 'px'        
-      document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 150);
-
- 
     
-  clearInterval(myTimer02)
-  myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 10) -2) 
-     let my02y = Math.floor((Math.random() * 10) - 2) 
-     document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + my02x + 'px'
-     document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
-     myCheckHit()
-  }, 30);
-    clearInterval(myTimer03)
-  myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 20) -6) 
-     let my02y = Math.floor((Math.random() * 20) - 6) 
-     document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
-     document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
-     myCheckHit()
-  }, 30);
-
+      
+      //automove background
+      
+      clearInterval(myClock)
+  let myTemp = '100px 0px'
+  myClock = setInterval(function(){
+      myGlobalX += 5
+      myTemp =  '50px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '50px' 
+      document.getElementById('myBody').style.backgroundPosition = myTemp
+  }, 200)
+    //fireball random move
+    
+	@@ -33,12 +33,12 @@
+  //chest random move
    clearInterval(myTimer04)
   myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 20) -6) 
-     let my02y = Math.floor((Math.random() * 20) -6) 
+     let my02x = Math.floor((Math.random() * 10) +2) 
+     let my02y = Math.floor((Math.random() * 10) + 2) 
      document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
      document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
      myCheckHit()
-  }, 200);
-   clearInterval(myTimer05)
-  myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 20) -6) 
-     let my02y = Math.floor((Math.random() * 20) - 6) 
-     document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) + my02x + 'px'
-     document.getElementById('myImg06').style.top  = parseInt(document.getElementById('myImg06').style.top)  + my02y + 'px'
-     myCheckHit()
-  }, 30);
-     clearInterval(myTimer06)
-  myTimer02 setInterval(function(){
-     let my02x = Math.floor((Math.random() * 20) -6) 
-     let my02y = Math.floor((Math.random() * 20) - 6) 
-     document.getElementById('myImg07').style.left = parseInt(document.getElementById('myImg07').style.left) + my02x + 'px'
-     document.getElementById('myImg07').style.top  = parseInt(document.getElementById('myImg07').style.top)  + my02y + 'px'
-     myCheckHit()
-  }, 30);
+  }, 60);
    docReady();
  }">
-	
-	    <style>
+<style>
 body {
   background-image: url('https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/90f25d92550acbc.png');
   background-repeat: repeat,
 	}
 </style>
 <script type="text/javascript">
-
    let myGlobalX = 0
    let myClock
    let myTimer01
    let myTimer02
  let myTimer03
  let myTimer04
-  let myTimer05
- let myTimer06
    // collision
-   
-
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -93,22 +54,25 @@ function myHitOther(my1,my2){
        return true
    }
 }
-
-
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
      alert('you lose ')  
-       document.getElementById('myImg01').style.left = '200px'
+       document.getElementById('myImg01').style.left = '20px'
        location = 'gamelevel2.html'  // psudeo refres
    }    
-    
+
    if ( myHitOther('myImg01','myImg03') ){
        alert('you lose ')  
-       document.getElementById('myImg01').style.left = '200px'
+       document.getElementById('myImg01').style.left = '20px'
        location = 'gamelevel2.html'  // psudeo refresh
    }   
-   
+
+   if ( myHitOther('myImg01','myImg03') ){
+      alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+   }   
+
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
@@ -116,11 +80,10 @@ function myCheckHit(){
       document.getElementById('myImg01').style.left = '20px'
       location = 'gamelevel2.html'
    }
-if ( myHitOther('myImg01','myImg05') ){
-    alert('you lose ')  
-        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // psudeo refresh
-   }    
+
+   // more if statements here
+
+
    // bounce off page boundaries
 
   if( parseInt(document.getElementById('myImg03').style.left) > window.innerWidth - document.getElementById('myImg03').width ){
@@ -136,35 +99,33 @@ if ( myHitOther('myImg01','myImg05') ){
   if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
        document.getElementById('myImg02').style.top = '10px'
     }   
-  if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
-       document.getElementById('myImg04').style.left = '10px'
+    if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
+       document.getElementById('myImg04').style.left = (window.innerWidth / 2) + 'px'
    }
   if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
-       document.getElementById('myImg04').style.top = '10px'
-    } 
+       document.getElementById('myImg04').style.top = '10px'     
+   }
+
 }
+
  //arrow key movement
             function leftArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) - 12 + 'px';
+            element.style.left = parseInt(element.style.left) - 8 + 'px';
             }
 
             function rightArrowPressed() {
             var element = document.getElementById("myImg01");
             element.style.left = parseInt(element.style.left) + 12 + 'px';
-
             }
-
             function upArrowPressed() {
             var element = document.getElementById("myImg01");
             element.style.top = parseInt(element.style.top) - 12 + 'px';
             }
-
             function downArrowPressed() {
             var element = document.getElementById("myImg01");
             element.style.top = parseInt(element.style.top) + 12 + 'px';
             }
-
             function moveSelection(evt) {
                 switch (evt.keyCode) {
                     case 37:
@@ -186,22 +147,13 @@ if ( myHitOther('myImg01','myImg05') ){
                   
                     }
                 };
-
         function docReady()
         {
           
           window.addEventListener('keydown', moveSelection);
         }
-
 </script>
-
 <img id="myImg01" src="myImgNew.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
 <img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg02" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
 <img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg03" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
 <img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="myImg04" style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
-
-<img id="myImg05" src="https://www.pinclipart.com/picdir/big/31-311739_flames-clipart-lake-fire-clip-art-fire-ball.png" title="myImg05" style="position:relative; width:60px; height:221px; left:250px; top:250px;">
-
-<img id="myImg06" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg06" style="position:absolute; width:100px; height:80px;  left:890px; top:300px;">
-<img id="myImg07" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg07" style="position:absolute; width:100px; height:80px;  left:230px; top:150px;">
-
