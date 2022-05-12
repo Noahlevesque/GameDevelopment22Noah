@@ -9,7 +9,7 @@
       myGlobalX += 10
       myTemp =  '100000px ' + myGlobalX + 'px'
       document.getElementById('myBody').style.backgroundPosition = myTemp
-  },750)
+  },500)
     //fireball random move
     
   clearInterval(myTimer02)
@@ -45,6 +45,14 @@
      document.getElementById('myImg05').style.top  = parseInt(document.getElementById('myImg05').style.top)  + my02y + 'px'
      myCheckHit()
   }, 30);
+     clearInterval(myTimer06)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) + my02x + 'px'
+     document.getElementById('myImg06').style.top  = parseInt(document.getElementById('myImg06').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
    docReady();
  }">
 <style>
@@ -54,13 +62,14 @@ body {
 	}
 </style>
 <script type="text/javascript">
-   let myGlobalX = 0
+   let myGlobalX = 5
    let myClock
    let myTimer01
    let myTimer02
  let myTimer03
  let myTimer04
  let myTimer05
+ let myTimer06
    // collision
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -128,6 +137,12 @@ function myCheckHit(){
        document.getElementById('myImg05').style.top = '10px'
    }
    
+       if( parseInt(document.getElementById('myImg06').style.left) > window.innerWidth - document.getElementById('myImg06').width ){
+       document.getElementById('myImg06').style.left = '10px'
+   }
+  if( parseInt(document.getElementById('myImg06').style.top) > window.innerHeight - document.getElementById('myImg06').height ){
+       document.getElementById('myImg06').style.top = '10px'
+   }
    
   if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
        document.getElementById('myImg02').style.left = (window.innerWidth / 3) + 'px'
@@ -192,5 +207,6 @@ function myCheckHit(){
 <img id="myImg01" src="myImgNew.jpg" title="you" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
 <img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
 <img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
-<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:500px; top:400px;">
-<img id="myImg05" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:250px; top:300px;">
+<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:500px; top:160px;">
+<img id="myImg05" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:250px; top:475px;">
+<img id="myImg06" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:250px; top:100px;">
