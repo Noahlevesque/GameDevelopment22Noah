@@ -4,12 +4,12 @@
       //automove background
       
       clearInterval(myClock)
-  let myTemp = '100px 0px'
+  let myTemp = '100px 25px'
   myClock = setInterval(function(){
-      myGlobalX += 5
-      myTemp =  '50px ' + myGlobalX + 'px'       //  myGlobalX + 'px ' + '50px' 
+      myGlobalX += 10
+      myTemp =  '100000px ' + myGlobalX + 'px'
       document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 200)
+  },750)
     //fireball random move
     
   clearInterval(myTimer02)
@@ -37,6 +37,14 @@
      document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
      myCheckHit()
   }, 60);
+      clearInterval(myTimer05)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg05').style.left = parseInt(document.getElementById('myImg05').style.left) + my02x + 'px'
+     document.getElementById('myImg05').style.top  = parseInt(document.getElementById('myImg05').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
    docReady();
  }">
 <style>
@@ -52,6 +60,7 @@ body {
    let myTimer02
  let myTimer03
  let myTimer04
+ let myTimer05
    // collision
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -72,28 +81,32 @@ function myHitOther(my1,my2){
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
-     alert('you lose ')  
+    // alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // psudeo refres
+       //location = 'gamelevel2.html'  // psudeo refres
    }    
 
    if ( myHitOther('myImg01','myImg03') ){
-       alert('you lose ')  
+     //  alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // psudeo refresh
+      // location = 'gamelevel2.html'  // psudeo refresh
    }   
 
    if ( myHitOther('myImg01','myImg03') ){
-      alert('you lose')
+     // alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
    }   
-
+ if ( myHitOther('myImg01','myImg05') ){
+     //  alert('you lose ')  
+       //document.getElementById('myImg01').style.left = '20px'
+      ///location = 'gamelevel2.html'  // psudeo refresh
+   } 
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
-       alert('You Win, now go to the next level')
+     //  alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-      location = 'gamelevel2.html'
+     // location = 'gamelevel2.html'
    }
 
    // more if statements here
@@ -108,14 +121,22 @@ function myCheckHit(){
        document.getElementById('myImg03').style.top = '10px'
    }
    
+     if( parseInt(document.getElementById('myImg05').style.left) > window.innerWidth - document.getElementById('myImg05').width ){
+       document.getElementById('myImg05').style.left = '10px'
+   }
+  if( parseInt(document.getElementById('myImg05').style.top) > window.innerHeight - document.getElementById('myImg05').height ){
+       document.getElementById('myImg05').style.top = '10px'
+   }
+   
+   
   if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
-       document.getElementById('myImg02').style.left = (window.innerWidth / 2) + 'px'
+       document.getElementById('myImg02').style.left = (window.innerWidth / 3) + 'px'
    }
   if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
        document.getElementById('myImg02').style.top = '10px'
     }   
     if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
-       document.getElementById('myImg04').style.left = (window.innerWidth / 2) + 'px'
+       document.getElementById('myImg04').style.left = (window.innerWidth / 3) + 'px'
    }
   if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
        document.getElementById('myImg04').style.top = '10px'     
@@ -126,20 +147,20 @@ function myCheckHit(){
  //arrow key movement
             function leftArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) - 8 + 'px';
+            element.style.left = parseInt(element.style.left) - 14 + 'px';
             }
 
             function rightArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.left = parseInt(element.style.left) + 12 + 'px';
+            element.style.left = parseInt(element.style.left) + 14 + 'px';
             }
             function upArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) - 12 + 'px';
+            element.style.top = parseInt(element.style.top) - 14 + 'px';
             }
             function downArrowPressed() {
             var element = document.getElementById("myImg01");
-            element.style.top = parseInt(element.style.top) + 12 + 'px';
+            element.style.top = parseInt(element.style.top) + 14 + 'px';
             }
             function moveSelection(evt) {
                 switch (evt.keyCode) {
@@ -168,7 +189,8 @@ function myCheckHit(){
           window.addEventListener('keydown', moveSelection);
         }
 </script>
-<img id="myImg01" src="myImgNew.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
-<img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg02" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
-<img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="myImg03" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
-<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="myImg04" style="position:absolute; width:100px; height:80px; left:500px; top:400px;">
+<img id="myImg01" src="myImgNew.jpg" title="you" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
+<img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px;  height:80px; left:350px; top:190px;">
+<img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:500px; top:190px;">
+<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:500px; top:400px;">
+<img id="myImg05" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:250px; top:300px;">
