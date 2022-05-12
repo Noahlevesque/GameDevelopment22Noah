@@ -91,32 +91,32 @@ function myHitOther(my1,my2){
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
-    // alert('you lose ')  
+    
        document.getElementById('myImg01').style.left = '20px'
-       //location = 'gamelevel2.html'  // psudeo refres
+      /location = 'gamelevel2.html'  // psudeo refres
    }    
 
    if ( myHitOther('myImg01','myImg03') ){
-     //  alert('you lose ')  
+     
        document.getElementById('myImg01').style.left = '20px'
-      // location = 'gamelevel2.html'  // psudeo refresh
+      location = 'gamelevel2.html'  // psudeo refresh
    }   
 
    if ( myHitOther('myImg01','myImg03') ){
-     // alert('you lose')
+
       document.getElementById('myImg01').style.left = '20px'
    }   
  if ( myHitOther('myImg01','myImg05') ){
-     //  alert('you lose ')  
-       //document.getElementById('myImg01').style.left = '20px'
-      ///location = 'gamelevel2.html'  // psudeo refresh
+
+      document.getElementById('myImg01').style.left = '20px'
+      location = 'gamelevel2.html'  // psudeo refresh
    } 
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
-     //  alert('You Win, now go to the next level')
+       alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-     // location = 'gamelevel2.html'
+      location = 'gamelevel2.html'
    }
 
    // more if statements here
