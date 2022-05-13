@@ -1,4 +1,6 @@
-<body id="myBody"  onkeydown="" onkeyup="" onLoad="{ 
+<body id="myBody"  onkeydown="" onkeyup="" onLoad="{
+    
+         
   
     //fireball random move
     
@@ -52,15 +54,18 @@ body {
   background-repeat: repeat,
 	}
 </style>
+	
+	
+	
 <script type="text/javascript">
    let myGlobalX = 5
    let myClock
    let myTimer01
    let myTimer02
- let myTimer03
- let myTimer04
- let myTimer05
- let myTimer06
+   let myTimer03
+   let myTimer04
+   let myTimer05
+   let myTimer06
    // collision
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -78,18 +83,24 @@ function myHitOther(my1,my2){
        return true
    }
 }
+
+
+
+
+
+
 function myCheckHit(){
 
    if ( myHitOther('myImg01','myImg02') ){
     // alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // psudeo refres
+       //location = 'gamelevel2.html'  // psudeo refres
    }    
 
    if ( myHitOther('myImg01','myImg03') ){
      //  alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 'gamelevel2.html'  // psudeo refresh
+      // location = 'gamelevel2.html'  // psudeo refresh
    }   
 
    if ( myHitOther('myImg01','myImg03') ){
@@ -99,28 +110,53 @@ function myCheckHit(){
  if ( myHitOther('myImg01','myImg05') ){
      //  alert('you lose ')  
        document.getElementById('myImg01').style.left = '20px'
-      location = 'gamelevel2.html'  // psudeo refresh
+      //location = 'gamelevel2.html'  // psudeo refresh
    } 
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
-     alert('You Win, now go to the next level')
+    // alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-      location = 'gamelevel2.html'
+   //   location = 'gamelevel2.html'
    }
-
+ if ( myHitOther('myImg01','myImg06') ){
+     //  alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+    //  location = 'gamelevel2.html'  // psudeo refresh
+   }
 
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
-       alert('You Win, now go to the next level')
+      // alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
-      location = 'gamelevel2.html'
+     // location = 'gamelevel2.html'
    }
-
-   // more if statements here
-
-
+   
+   //wall blocok wow so cool
+ if ( myHitOther('myImg01','myImg07') ){
+      document.getElementById('myImg01').style.top = '-20px'
+   }   
+    if ( myHitOther('myImg07','myImg03') ){
+      document.getElementById('myImg03').style.top = '-20px'
+   }   
+    if ( myHitOther('myImg07','myImg02') ){
+      document.getElementById('myImg02').style.top = '-20px'
+   } 
+    if ( myHitOther('myImg07','myImg04') ){
+      document.getElementById('myImg04').style.left = '-20px'
+   } 
+       if ( myHitOther('myImg07','myImg03') ){
+      document.getElementById('myImg03').style.top = '20px'
+ 
+   } 
    // bounce off page boundaries
+
+
+
+
+
+
+
 
   if( parseInt(document.getElementById('myImg03').style.left) > window.innerWidth - document.getElementById('myImg03').width ){
        document.getElementById('myImg03').style.left = '10px'
@@ -157,6 +193,12 @@ function myCheckHit(){
    }
 
 }
+
+
+
+
+
+
 
  //arrow key movement
             function leftArrowPressed() {
@@ -203,9 +245,13 @@ function myCheckHit(){
           window.addEventListener('keydown', moveSelection);
         }
 </script>
+	
+	
+	
 <img id="myImg01" src="myImgNew.jpg" title="you" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
 <img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px;  height:80px; left:069px; top:276px;">
 <img id="myImg03" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:812px; top:500px;">
 <img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:1000px; top:350px;">
 <img id="myImg05" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:relative; width:100px; height:80px;  left:125px; top:300px;">
 <img id="myImg06" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px; height:80px;  left:321px; top:500px;">
+<img id="myImg07" src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Fences-PNG-Clipart/Pillar_Transparent_PNG_Clip_Art_Image.png?m=1529405675" title="wall" style="position:relative; width:50px; height:200px;  left:200px; top:350px;">
