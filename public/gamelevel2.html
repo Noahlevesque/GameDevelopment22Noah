@@ -13,7 +13,7 @@
      myCheckHit()
   }, 30);
     clearInterval(myTimer03)
-  myTimer02 = setInterval(function(){
+  myTimer03 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 20) -6) 
      let my02y = Math.floor((Math.random() * 20) - 6) 
      document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
@@ -22,7 +22,7 @@
   }, 30);
   //chest random move
    clearInterval(myTimer04)
-  myTimer02 = setInterval(function(){
+  myTimer04 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 10) +2) 
      let my02y = Math.floor((Math.random() * 10) + 2) 
      document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
@@ -30,7 +30,7 @@
      myCheckHit()
   }, 60);
       clearInterval(myTimer05)
-  myTimer02 = setInterval(function(){
+  myTimer05 = setInterval(function(){
      let my02x = Math.floor((Math.random() * 20) -6) 
      let my02y = Math.floor((Math.random() * 20) - 6) 
      document.getElementById('myImg05').style.left = parseInt(document.getElementById('myImg05').style.left) + my02x + 'px'
@@ -38,13 +38,13 @@
      myCheckHit()
   }, 30);
      clearInterval(myTimer06)
-  myTimer02 = setInterval(function(){
-     let my02x = Math.floor((Math.random() * 20) -6) 
-     let my02y = Math.floor((Math.random() * 20) - 6) 
+  myTimer06 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) - 5) 
+     let my02y = Math.floor((Math.random() * 20) - 5) 
      document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) + my02x + 'px'
      document.getElementById('myImg06').style.top  = parseInt(document.getElementById('myImg06').style.top)  + my02y + 'px'
      myCheckHit()
-  }, 30);
+  }, 100);
  
    docReady();
  }">
@@ -80,9 +80,6 @@ function myHitOther(my1,my2){
        return true
    }
 }
-
-
-
 
 
 
@@ -140,7 +137,7 @@ function myCheckHit(){
       document.getElementById('myImg02').style.top = '1px'
    } 
     if ( myHitOther('myImg07','myImg04') ){
-      document.getElementById('myImg04').style.left = '1px'
+      document.getElementById('myImg04').style.top = '1px'
    } 
        if ( myHitOther('myImg07','myImg03') ){
       document.getElementById('myImg03').style.top = '1px'
@@ -153,11 +150,6 @@ function myCheckHit(){
       document.getElementById('myImg06').style.top = '1px'
    } 
    // bounce off page boundaries
-
-
-
-
-
 
 
 
@@ -258,4 +250,4 @@ function myCheckHit(){
 <img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:1000px; top:350px;">
 
 
-<img id="myImg07" src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Fences-PNG-Clipart/Pillar_Transparent_PNG_Clip_Art_Image.png?m=1529405675" title="wall" style="position:absolute; width:50px; height:200px; left:450px; top:350px; ">
+<img id="myImg07" src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Fences-PNG-Clipart/Pillar_Transparent_PNG_Clip_Art_Image.png?m=1529405675" title="wall" style="position:absolute; width:50px; height:200px; left:800px; top:350px; ">
