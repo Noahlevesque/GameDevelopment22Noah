@@ -1,7 +1,4 @@
-<body id="myBody"  onkeydown="" onkeyup="" onLoad="{
-    
-         
-  
+<body id="myBody"  onkeydown="" onkeyup="" onLoad="{  
     //fireball random move
     
   clearInterval(myTimer02)
@@ -244,7 +241,31 @@ function myCheckHit(){
           
           window.addEventListener('keydown', moveSelection);
         }
+
+
+
+
+
+//clock
+
+window.addEventListener("load", function() {
+  const clock = document.getElementById("time");
+  let time = -1, intervalId;
+  function incrementTime() {
+    time++;
+    clock.textContent =
+      ("0" + Math.trunc(time / 60)).slice(-2) +
+      ":" + ("0" + (time % 60)).slice(-2);
+  }
+  incrementTime();
+  intervalId = setInterval(incrementTime, 1000);
+});
+
 </script>
+
+<div id="time" style="text-align: center;font-size: 2em; margin-bottom: 10px">00:00</div>
+
+
 <img id="myImg01" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c1ed.png" title="you" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
 
 <img id="myImg02" src="https://freepngimg.com/download/fireball/27689-5-fireball-hd.png" title="fireball" style="position:absolute; width:100px;  height:80px; left:069px; top:276px;">
