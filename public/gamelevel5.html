@@ -1,0 +1,279 @@
+<body id="myBody"  onkeydown="" onkeyup="" onLoad="{  
+    //fireball random move
+    
+  clearInterval(myTimer02)
+  myTimer02 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) -2) 
+     let my02y = Math.floor((Math.random() * 10) - 2) 
+     document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + my02x + 'px'
+     document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+  
+    clearInterval(myTimer03)
+  myTimer03 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02x + 'px'
+     document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+  
+  
+  //chest random move
+   clearInterval(myTimer04)
+  myTimer04 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 10) +2) 
+     let my02y = Math.floor((Math.random() * 10) + 2) 
+     document.getElementById('myImg04').style.left = parseInt(document.getElementById('myImg04').style.left) + my02x + 'px'
+     document.getElementById('myImg04').style.top  = parseInt(document.getElementById('myImg04').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 60);
+  
+      clearInterval(myTimer05)
+  myTimer05 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) -6) 
+     let my02y = Math.floor((Math.random() * 20) - 6) 
+     document.getElementById('myImg05').style.left = parseInt(document.getElementById('myImg05').style.left) + my02x + 'px'
+     document.getElementById('myImg05').style.top  = parseInt(document.getElementById('myImg05').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 30);
+  
+     clearInterval(myTimer06)
+  myTimer06 = setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) - 5) 
+     let my02y = Math.floor((Math.random() * 20) - 5) 
+     document.getElementById('myImg06').style.left = parseInt(document.getElementById('myImg06').style.left) + my02x + 'px'
+     document.getElementById('myImg06').style.top  = parseInt(document.getElementById('myImg06').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 100);
+ 
+   docReady();
+ }">
+<style>
+body {
+  background-image: url('https://i.imgur.com/5mbmPo4.png');
+ background-position: center ;
+      }
+</style>
+<script type="text/javascript">
+   let myGlobalX = 5
+   let myClock
+   let myTimer01
+   let myTimer02
+   let myTimer03
+   let myTimer04
+   let myTimer05
+   let myTimer06
+   // collision
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+
+function myCheckHit(){
+
+   if ( myHitOther('myImg01','myImg02') ){
+    // alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+       location = 'gamelevel3.html'  // psudeo refres
+   }    
+
+   if ( myHitOther('myImg01','myImg03') ){
+     //  alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+       location = 'gamelevel3.html'  // psudeo refresh
+   }   
+
+   if ( myHitOther('myImg01','myImg03') ){
+     // alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+   }   
+ if ( myHitOther('myImg01','myImg05') ){
+     //  alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+     location = 'gamelevel3.html'  // psudeo refresh
+   } 
+
+   // YOU WIN and go to next level!
+   if ( myHitOther('myImg01','myImg04') ){
+     alert('You Win, now go to the next level')
+      document.getElementById('myImg01').style.left = '20px'
+     location = 'gamelevel1.html'
+   }
+ if ( myHitOther('myImg01','myImg06') ){
+     //  alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+     location = 'gamelevel3.html'  // psudeo refresh
+   }
+
+   // YOU WIN and go to next level!
+   if ( myHitOther('myImg01','myImg04') ){
+       alert('You Win, now go to the next level')
+      document.getElementById('myImg01').style.left = '20px'
+      location = 'gamelevel1.html'
+   }
+   
+   //wall blocok wow so cool
+ if ( myHitOther('myImg01','myImg07') ){
+      document.getElementById('myImg01').style.left = '1px'
+   }   
+    if ( myHitOther('myImg07','myImg03') ){
+      document.getElementById('myImg03').style.top = '1px'
+   }   
+    if ( myHitOther('myImg07','myImg02') ){
+      document.getElementById('myImg02').style.top = '1px'
+   } 
+    if ( myHitOther('myImg07','myImg04') ){
+      document.getElementById('myImg04').style.top = '1px'
+   } 
+       if ( myHitOther('myImg07','myImg03') ){
+      document.getElementById('myImg03').style.top = '1px'
+ 
+   } 
+       if ( myHitOther('myImg07','myImg05') ){
+      document.getElementById('myImg05').style.top = '1px'
+   } 
+         if ( myHitOther('myImg07','myImg06') ){
+      document.getElementById('myImg06').style.top = '1px'
+   } 
+   // bounce off page boundaries
+
+
+
+  if( parseInt(document.getElementById('myImg03').style.left) > window.innerWidth - document.getElementById('myImg03').width ){
+       document.getElementById('myImg03').style.left = '10px'
+   }
+  if( parseInt(document.getElementById('myImg03').style.top) > window.innerHeight - document.getElementById('myImg03').height ){
+       document.getElementById('myImg03').style.top = '10px'
+   }
+   
+     if( parseInt(document.getElementById('myImg05').style.left) > window.innerWidth - document.getElementById('myImg05').width ){
+       document.getElementById('myImg05').style.left = '10px'
+   }
+  if( parseInt(document.getElementById('myImg05').style.top) > window.innerHeight - document.getElementById('myImg05').height ){
+       document.getElementById('myImg05').style.top = '10px'
+   }
+   
+       if( parseInt(document.getElementById('myImg06').style.left) > window.innerWidth - document.getElementById('myImg06').width ){
+       document.getElementById('myImg06').style.left = '10px'
+   }
+  if( parseInt(document.getElementById('myImg06').style.top) > window.innerHeight - document.getElementById('myImg06').height ){
+       document.getElementById('myImg06').style.top = '10px'
+   }
+   
+  if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
+       document.getElementById('myImg02').style.left = (window.innerWidth / 3) + 'px'
+   }
+  if( parseInt(document.getElementById('myImg02').style.top) > window.innerHeight - document.getElementById('myImg02').height ){
+       document.getElementById('myImg02').style.top = '10px'
+    }   
+    if( parseInt(document.getElementById('myImg04').style.left) > window.innerWidth - document.getElementById('myImg04').width ){
+       document.getElementById('myImg04').style.left = (window.innerWidth / 3) + 'px'
+   }
+  if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
+       document.getElementById('myImg04').style.top = '10px'     
+   }
+
+}
+
+
+
+
+
+
+
+ //arrow key movement
+            function leftArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.left = parseInt(element.style.left) - 14 + 'px';
+            }
+
+            function rightArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.left = parseInt(element.style.left) + 14 + 'px';
+            }
+            function upArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.top = parseInt(element.style.top) - 14 + 'px';
+            }
+            function downArrowPressed() {
+            var element = document.getElementById("myImg01");
+            element.style.top = parseInt(element.style.top) + 14 + 'px';
+            }
+            function moveSelection(evt) {
+                switch (evt.keyCode) {
+                    case 65:
+                    leftArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 68:
+                    rightArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 87:
+                    upArrowPressed();
+                    myCheckHit();
+                    break;
+                    case 83:
+                    downArrowPressed();
+                    myCheckHit();
+                    break;
+                  
+                    }
+                };
+        function docReady()
+        {
+          
+          window.addEventListener('keydown', moveSelection);
+        }
+
+
+
+
+
+//clock
+
+window.addEventListener("load", function() {
+  const clock = document.getElementById("time");
+  let time = -1, intervalId;
+  function incrementTime() {
+    time++;
+    clock.textContent =
+      ("0" + Math.trunc(time / 60)).slice(-2) +
+      ":" + ("0" + (time % 60)).slice(-2);
+  }
+  incrementTime();
+  intervalId = setInterval(incrementTime, 1000);
+});
+
+</script>
+
+<div id="time"  style="text-align: center;font-size: 2em;color:white; margin-bottom: 10px">00:00</div>
+
+
+<img id="myImg01" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c1ed.png" title="you" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
+
+<img id="myImg02" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px;  height:80px; left:472px; top:892px;">
+<img id="myImg03" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px; height:80px;  left:551px; top:719px;">
+<img id="myImg05" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:relative; width:100px; height:80px;  left:834px; top:624px;">
+<img id="myImg06" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px; height:80px;  left:370px; top:282px;">
+
+<img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:1000px; top:350px;">
+
+
+<img id="myImg07" src="https://static-cdn.jtvnw.net/jtv_user_pictures/1a3acc0a-d4b7-4df8-a397-274e295a574f-profile_banner-480.png" title="wall" style="position:relative; width:300px; height:120px; left:400px; top:300px; ">
