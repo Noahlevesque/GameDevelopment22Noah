@@ -48,6 +48,16 @@
      myCheckHit()
   }, 100);
  
+      clearInterval(myTimer08
+  myTimer08= setInterval(function(){
+     let my02x = Math.floor((Math.random() * 20) - 5) 
+     let my02y = Math.floor((Math.random() * 20) - 5) 
+     document.getElementById('myImg08').style.left = parseInt(document.getElementById('myImg08').style.left) + my02x + 'px'
+     document.getElementById('myImg08').style.top  = parseInt(document.getElementById('myImg08').style.top)  + my02y + 'px'
+     myCheckHit()
+  }, 100);
+ 
+ 
    docReady();
  }">
 <style>
@@ -65,6 +75,8 @@ body {
    let myTimer04
    let myTimer05
    let myTimer06
+   let myTimer08
+   
    // collision
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -120,7 +132,11 @@ function myCheckHit(){
        document.getElementById('myImg01').style.left = '20px'
      location = 'gamelevel5.html'  // psudeo refresh
    }
-
+if ( myHitOther('myImg01','myImg08') ){
+     //  alert('you lose ')  
+       document.getElementById('myImg01').style.left = '20px'
+     location = 'gamelevel5.html'  // psudeo refresh
+   }
    // YOU WIN and go to next level!
    if ( myHitOther('myImg01','myImg04') ){
        alert('You Win, now go to the next level')
@@ -150,6 +166,9 @@ function myCheckHit(){
    } 
          if ( myHitOther('myImg07','myImg06') ){
       document.getElementById('myImg06').style.top = '1px'
+   } 
+        if ( myHitOther('myImg07','myImg08') ){
+      document.getElementById('myImg08').style.top = '1px'
    } 
    // bounce off page boundaries
 
@@ -188,7 +207,12 @@ function myCheckHit(){
   if( parseInt(document.getElementById('myImg04').style.top) > window.innerHeight - document.getElementById('myImg04').height ){
        document.getElementById('myImg04').style.top = '10px'     
    }
-
+ if( parseInt(document.getElementById('myImg08').style.left) > window.innerWidth - document.getElementById('myImg08').width ){
+       document.getElementById('myImg08').style.left = (window.innerWidth / 3) + 'px'
+   }
+  if( parseInt(document.getElementById('myImg08').style.top) > window.innerHeight - document.getElementById('myImg08').height ){
+       document.getElementById('myImg08').style.top = '10px'
+    } 
 }
 
 
@@ -272,6 +296,7 @@ window.addEventListener("load", function() {
 <img id="myImg03" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px; height:80px;  left:551px; top:719px;">
 <img id="myImg05" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:relative; width:100px; height:80px;  left:834px; top:624px;">
 <img id="myImg06" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px; height:80px;  left:370px; top:282px;">
+<img id="myImg08" src="https://cdn.shopify.com/s/files/1/0515/5094/5433/products/Aegagropila-linnaei-3_1445x.png?v=1625551254" title="dirt" style="position:absolute; width:100px; height:80px;  left:168px; top:369px;">
 
 <img id="myImg04" src="https://pngimg.com/uploads/treasure_chest/treasure_chest_PNG35.png" title="chest of treasures" style="position:relative; width:100px; height:80px; left:1000px; top:350px;">
 
