@@ -14,3 +14,55 @@ body {
 	<li><a href="gamelevel4.html"> Game Level 4</a>
         <li><a href="gamelevel5.html"> Game Level 5</a>
 	<hr>
+
+		
+		<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <style>
+ 
+        /* Set display to none for image*/
+        #myimg02 {
+            display: none;
+        }
+    </style>
+<button id="btnID" onclick="show(); openFullscreen();
+setTimeout(function() {
+  location.href='gamelevel1.html';
+}, delayInMilliseconds);
+">Level 1</button>
+
+
+<img id= myimg02 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSAdp2B34lM3nKKeE9z4Ea2VcfzcEkUBiPIw&usqp=CAU">
+
+
+<script>
+var elem = document.getElementById("myimg02");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+var delayInMilliseconds = 1000; //1 second
+
+ function show() {
+ 
+            /* Access image by id and change
+            the display property to block*/
+            document.getElementById('myimg02')
+                    .style.display = "block";
+ 
+            document.getElementById('btnID')
+                    .style.display = "none";
+        }
+</script>
+
+</body>
+</html>
